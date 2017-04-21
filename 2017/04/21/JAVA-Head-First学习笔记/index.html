@@ -99,7 +99,7 @@
 <meta property="og:url" content="http://yoursite.com/2017/04/21/JAVA-Head-First学习笔记/index.html">
 <meta property="og:site_name" content="冯炽">
 <meta property="og:description" content="这是我大四上学期在掌赢信息科技实习的时候看的一本书籍，Head First系列想必大家都听说过吧。当时因为要做Android的自动化测试，编写一个名为QT4A的自动化脚本，具体在此不详述。因为是for Android，而Android用到的语言是Java，因此我在公司订购了一本《Java Head First》，在利用晚饭的间隙，花了不到半个月的时间把这本读完了。以下是我当时边读书边写的读书笔记，">
-<meta property="og:updated_time" content="2017-04-21T13:18:19.000Z">
+<meta property="og:updated_time" content="2017-04-21T13:34:32.000Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="JAVA Head First学习笔记">
 <meta name="twitter:description" content="这是我大四上学期在掌赢信息科技实习的时候看的一本书籍，Head First系列想必大家都听说过吧。当时因为要做Android的自动化测试，编写一个名为QT4A的自动化脚本，具体在此不详述。因为是for Android，而Android用到的语言是Java，因此我在公司订购了一本《Java Head First》，在利用晚饭的间隙，花了不到半个月的时间把这本读完了。以下是我当时边读书边写的读书笔记，">
@@ -368,8 +368,8 @@
       
 
       
-        <p>这是我大四上学期在掌赢信息科技实习的时候看的一本书籍，Head First系列想必大家都听说过吧。当时因为要做Android的自动化测试，编写一个名为QT4A的自动化脚本，具体在此不详述。因为是for Android，而Android用到的语言是Java，因此我在公司订购了一本《Java Head First》，在利用晚饭的间隙，花了不到半个月的时间把这本读完了。以下是我当时边读书边写的读书笔记，笔记内容按书籍章节分层。</p>
-<h2 id="序"><a href="#序" class="headerlink" title="序"></a>序</h2><p>Java虚拟机JVM<br>Java1.02 Java1.1 Java2 Java5.0<br>类存在于源文件里面，方法存在于类中，语句(statement)存在于方法中<br>一定有一个main函数来作为程序的起点<br>不要字符串之间换行<br><a id="more"></a><br>覆盖(override)的意思是由子类重新定义集成下来的方法，以改变或延伸此方法的行为<br>对象本身已知的事物成为实例变量，对象可以执行的动作成为方法<br>对象带有实例变量和方法，但它们都是类设计中的一部分<br>创建对象时，它会被存放在称为堆的内存区域中。不论对象被如何创建，这个堆不是普通的堆，它是可以回收垃圾的堆。Java会主动管理我们的内存</p>
+        <p>这是我大四上学期在掌赢信息科技实习的时候看的一本书籍，Head First系列想必大家都听说过吧。当时因为要做Android的自动化测试，编写一个名为QT4A的自动化脚本，具体在此不详述。因为是for Android，而Android用到的语言是Java，因此我在公司订购了一本《Java Head First》，在利用晚饭的间隙，花了不到半个月的时间把这本读完了。以下是我当时边读书边写的读书笔记，笔记内容按书籍章节分层。<br><a id="more"></a></p>
+<h2 id="序"><a href="#序" class="headerlink" title="序"></a>序</h2><p>Java虚拟机JVM<br>Java1.02 Java1.1 Java2 Java5.0<br>类存在于源文件里面，方法存在于类中，语句(statement)存在于方法中<br>一定有一个main函数来作为程序的起点<br>不要字符串之间换行<br>覆盖(override)的意思是由子类重新定义集成下来的方法，以改变或延伸此方法的行为<br>对象本身已知的事物成为实例变量，对象可以执行的动作成为方法<br>对象带有实例变量和方法，但它们都是类设计中的一部分<br>创建对象时，它会被存放在称为堆的内存区域中。不论对象被如何创建，这个堆不是普通的堆，它是可以回收垃圾的堆。Java会主动管理我们的内存</p>
 <h2 id="认识变量"><a href="#认识变量" class="headerlink" title="认识变量"></a>认识变量</h2><p>byte 8bits short16 int32 long64<br>浮点数 float32 double64<br>Contact[] ca = new Contact[10]; //创建对象</p>
 <h2 id="对象的行为"><a href="#对象的行为" class="headerlink" title="对象的行为"></a>对象的行为</h2><p>状态影响行为，行为影响状态，对象有状态和行为两种属性，分别由实例变量和方法来表示<br>Java是通过值传递的，也就是说通过拷贝传递的，所以在方法中改变一个值，它的值是不会变的， 因为传过来的只是一个拷贝<br>数据隐藏的方法：将实例变量标记为private，将getters与setters标记为public<br>实例变量与局部变量的区别：实例变量是声明在类内而不是方法中；局部变量是声明在方法中；局部变量在使用前必须初始化<br>使用==可以来比较两个primitive主数据类型，或者判断两个引用是否引用同一个对象<br>使用equals()可以判断两个对象是否在意义上相等  </p>
 <h2 id="超强力方法"><a href="#超强力方法" class="headerlink" title="超强力方法"></a>超强力方法</h2><p>ArrayList是Java API类，可以使用一些方法比如add(), remove()等<br>Java程序不会因为使用了import而变大或者变慢<br>ArrayList<string> a = new ArrayList<string>{};  </string></string></p>
