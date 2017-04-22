@@ -1,0 +1,755 @@
+<!doctype html>
+
+
+
+  
+
+
+<html class="theme-next pisces use-motion" lang="zh-Hans">
+<head>
+  <meta charset="UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
+
+
+
+
+
+
+<meta http-equiv="Cache-Control" content="no-transform" />
+<meta http-equiv="Cache-Control" content="no-siteapp" />
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+  <link href="/lib/fancybox/source/jquery.fancybox.css?v=2.1.5" rel="stylesheet" type="text/css" />
+
+
+
+
+  
+  
+  
+  
+
+  
+    
+    
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+    
+    
+    <link href="//fonts.googleapis.com/css?family=Lato:300,300italic,400,400italic,700,700italic&subset=latin,latin-ext" rel="stylesheet" type="text/css">
+  
+
+
+
+
+
+
+<link href="/lib/font-awesome/css/font-awesome.min.css?v=4.6.2" rel="stylesheet" type="text/css" />
+
+<link href="/css/main.css?v=5.1.0" rel="stylesheet" type="text/css" />
+
+
+  <meta name="keywords" content="冯炽，fengchi863，fengchi863.top" />
+
+
+
+
+
+  <link rel="alternate" href="/atom.xml" title="冯炽" type="application/atom+xml" />
+
+
+
+
+  <link rel="shortcut icon" type="image/x-icon" href="/favicon.ico?v=5.1.0" />
+
+
+
+
+
+
+<meta name="description" content="Python Head First这一本书也是我在大四实习的时候阅读的。现在主要在学习Android，所以已经有一段时间不碰Python了。现在把之前的笔记拿出来分享一下。笔记做的比较简陋，甚至连序号都没有。但都是可以看懂的内容。这本书也是从Python的基础知识讲起，内容还没有达到多么深入的地步。">
+<meta name="keywords">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Python Head First学习笔记">
+<meta property="og:url" content="http://yoursite.com/2017/04/22/Python-Head-First学习笔记/index.html">
+<meta property="og:site_name" content="冯炽">
+<meta property="og:description" content="Python Head First这一本书也是我在大四实习的时候阅读的。现在主要在学习Android，所以已经有一段时间不碰Python了。现在把之前的笔记拿出来分享一下。笔记做的比较简陋，甚至连序号都没有。但都是可以看懂的内容。这本书也是从Python的基础知识讲起，内容还没有达到多么深入的地步。">
+<meta property="og:image" content="http://yoursite.com/2017/04/22/Python-Head-First学习笔记/python-head-first-1.jpeg">
+<meta property="og:image" content="http://yoursite.com/2017/04/22/Python-Head-First学习笔记/python-head-first-2.jpeg">
+<meta property="og:image" content="http://yoursite.com/2017/04/22/Python-Head-First学习笔记/python-head-first-3.jpeg">
+<meta property="og:image" content="http://yoursite.com/2017/04/22/Python-Head-First学习笔记/python-head-first-4.jpeg">
+<meta property="og:updated_time" content="2017-04-22T14:57:59.000Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="Python Head First学习笔记">
+<meta name="twitter:description" content="Python Head First这一本书也是我在大四实习的时候阅读的。现在主要在学习Android，所以已经有一段时间不碰Python了。现在把之前的笔记拿出来分享一下。笔记做的比较简陋，甚至连序号都没有。但都是可以看懂的内容。这本书也是从Python的基础知识讲起，内容还没有达到多么深入的地步。">
+<meta name="twitter:image" content="http://yoursite.com/2017/04/22/Python-Head-First学习笔记/python-head-first-1.jpeg">
+
+
+
+<script type="text/javascript" id="hexo.configurations">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    root: '/',
+    scheme: 'Pisces',
+    sidebar: {"position":"left","display":"post","offset":12,"offset_float":0,"b2t":false,"scrollpercent":false},
+    fancybox: true,
+    motion: true,
+    duoshuo: {
+      userId: '0',
+      author: '博主'
+    },
+    algolia: {
+      applicationID: '',
+      apiKey: '',
+      indexName: '',
+      hits: {"per_page":10},
+      labels: {"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}
+    }
+  };
+</script>
+
+
+
+  <link rel="canonical" href="http://yoursite.com/2017/04/22/Python-Head-First学习笔记/"/>
+
+
+
+
+
+  <title> Python Head First学习笔记 | 冯炽 </title>
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+    
+  
+
+  <div class="container sidebar-position-left page-post-detail ">
+    <div class="headband"></div>
+
+    <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-wrapper">
+  <div class="site-meta ">
+    
+
+    <div class="custom-logo-site-title">
+      <a href="/"  class="brand" rel="start">
+        <span class="logo-line-before"><i></i></span>
+        <span class="site-title">冯炽</span>
+        <span class="logo-line-after"><i></i></span>
+      </a>
+    </div>
+      
+        <p class="site-subtitle">天行健，君子以自强不息。</p>
+      
+  </div>
+
+  <div class="site-nav-toggle">
+    <button>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+    </button>
+  </div>
+</div>
+
+<nav class="site-nav">
+  
+
+  
+    <ul id="menu" class="menu">
+      
+        
+        <li class="menu-item menu-item-home">
+          <a href="/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-home"></i> <br />
+            
+            首页
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-categories">
+          <a href="/categories" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-th"></i> <br />
+            
+            分类
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-archives">
+          <a href="/archives" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-archive"></i> <br />
+            
+            归档
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-about">
+          <a href="/about" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-user"></i> <br />
+            
+            关于
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-tags">
+          <a href="/tags" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-tags"></i> <br />
+            
+            标签
+          </a>
+        </li>
+      
+
+      
+    </ul>
+  
+
+  
+</nav>
+
+
+
+ </div>
+    </header>
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          <div id="content" class="content">
+            
+
+  <div id="posts" class="posts-expand">
+    
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2017/04/22/Python-Head-First学习笔记/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="冯炽">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/头像.jpeg">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="冯炽">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+            
+            
+              
+                Python Head First学习笔记
+              
+            
+          </h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2017-04-22T11:33:33+08:00">
+                2017-04-22
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        <p>Python Head First这一本书也是我在大四实习的时候阅读的。现在主要在学习Android，所以已经有一段时间不碰Python了。现在把之前的笔记拿出来分享一下。笔记做的比较简陋，甚至连序号都没有。但都是可以看懂的内容。这本书也是从Python的基础知识讲起，内容还没有达到多么深入的地步。<br><a id="more"></a><br>len(array)<br>print()<br>print(array[1])<br>array.pop()<br>array.extend() #末尾插入一个array<br>array.remove(“element”)<br>array.insert(num,”element”)<br>array.append(“element”) #末尾插入一个元素</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line">movies=[</div><div class="line">    <span class="string">"element"</span>,...,</div><div class="line">        [<span class="string">"element"</span>,...,</div><div class="line">            [<span class="string">"element"</span>,...]]] <span class="comment">#列表的嵌套</span></div></pre></td></tr></table></figure>
+<p>isinstance(array, list) #判断一个东西是不是列表，如果是返回true，否则false<br>dir(<strong>builtins</strong>) #可以查看python中所有的内置函数（BIF）<br>help(input) #可以查看input函数的帮助<br>PyPI：Python Package Index：Python包索引<br>三个引号注释一个代码块 “””…”””<br>nester.print_lol(array) #nester是命名空间，否则编译器不知道去哪里寻找print_lol()这个函数<br>print(“\t”, end=’’) #插入一个制表符，end=’’是为了关闭其默认自动换行的功能<br>print(“\t” *num, end=’’)<br>for tab_stop in range(num) 可以进行num个循环<br>indent #单词释义：缩进  </p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">the_file = open(<span class="string">'document'</span>)  </div><div class="line">the_file.close()</div></pre></td></tr></table></figure>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">import</span> os  </div><div class="line">os.getcwd() <span class="comment">#显示当前工作目录</span></div></pre></td></tr></table></figure>
+<p>os.chdir(‘../HeadFirstPython/chapter3’) #切换路径<br>data = open(‘document’)<br>seek() #此函数可以让文件退回到起始行<br>print(data.readline(), end=’’) #第二次运行时会读取第二行<br>for each_line in data:<br>    print(each_line, end=’’)<br>(first, second) = each_line.split(“:”) #将对话从冒号两边分开<br>find(“:”) #若该行有这个符号，则会返回它在这一行的位置，没有的话返回-1<br>not each_line.find(“:”) #not会将后面的值取反<br>元组(tuple) #用小括号表示的列表，一旦创建就不能被改变，相当于const </p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">try</span>:</div><div class="line">    ...</div><div class="line"><span class="keyword">except</span>:</div><div class="line">    ... <span class="comment">#此代码段用来防止错误traceback</span></div></pre></td></tr></table></figure>
+<p>if os.path.exists(‘sketch.txt’): #用于检查该文件是否存在<br>pass #可以放在异常处理的后面，可以直接让代码跳过这个异常<br>ValuseError是返回错误，IOError是打开文件时的错误  </p>
+<p>each_line = each_line.strip() #该函数可以从字符串中除去不想要的空白符<br>elif #这个关键词相当于else if<br>out = open(“data.out”, “w”) #python默认第二个参数是r(只读)，改为w后变为可写<br>print(“…”, file=out) #out是所写数据文件对象的名字，写完后最后要加上out.close()，意思是刷新输出(flushing)<br>w模式会清除文件原有的内容，a模式可以追加一个文件，w+可以打开一个文件完成写和读（不清除）  </p>
+<figure class="highlight"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">man_file = open("man_data.txt', 'w')</div><div class="line">print(man, file=man_file)</div><div class="line">man_file.close()</div></pre></td></tr></table></figure>
+<p>try语句最后可以加上一个finally:组，确保最后会运行下面的语句，比如写文件最后关闭文件<br>Python对象只包含数据对象的一个引用，数据对象才真正包含数据，如果想改变一个不可变的值，Python会产生一个TypeError异常<br>if ‘data’ in locals(): #locals() BIF会返回当前作用域中定义的所有名的一个集合  </p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">except</span> IOError <span class="keyword">as</span> err:</div><div class="line">    print(<span class="string">'File error: '</span> + str(err)) <span class="comment">#为异常对象给定一个名，然后用作为错误消息的一部分，str()函数将异常对象表示为一个字符串</span></div><div class="line"><span class="keyword">with</span> open(<span class="string">'man_data.txt'</span>, <span class="string">'w'</span>) <span class="keyword">as</span> man_file:</div><div class="line">    print(man, file=man_file) <span class="comment">#此段代码可以放在try之后，后面就不用再加finally组</span></div></pre></td></tr></table></figure>
+<p>fh=sys.stdout #sys.stdout相当于一个缺省值，当这个参数没有被指定时就会保存到屏幕上<br>pickle：python中的一个标准库<br>import pickle #使用pickle时打开文件时必须用二进制打开，’wb’, ‘rb’<br>pickle.dump(‘…’, mysavedata) #使用dump()函数保存数据到python数据存储中<br>a_list = pickle.load(mysavedata) #使用load()函数从文件恢复数据<br>显示一个列表的最后一行时可以使用array[-1]  </p>
+<p>data.sort() #对数据进行排序（并替换）<br>data2 = sorted(data) #对数据进行排序（原数据不变），默认sort和sorted函数都会升序处理，如果要降序，向函数传入reverse=True<br>列表推导：secs = [m * 60 for m in mins]<br>array[0:3] #数组中从第0项到（但不包括）第3项的数据<br>not in操作符<br>集合与列表的不同，集合中不允许有重复项，比如distances= set(array)，会自动去除其中的重复项  </p>
+<p>pop(0)将删除并返回列表最前面的数据项<br>创建字典：1.cleese={} 2.palin=dict() #两种方式，第一种利用大括号创建，第二种利用工厂函数创建  </p>
+<figure class="highlight"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div></pre></td><td class="code"><pre><div class="line">cleese['Name']='FengChi'</div><div class="line">cleese['Occupations']=['actor', 'comedian', 'student']</div><div class="line">palin = ['Name': 'FengChi', 'Occupations': '['actor', 'comedian', 'student']</div><div class="line">class Athlete:</div><div class="line">    def __init__(self):</div><div class="line">        ... #定义一个类，实际上是在定义一个定制工厂函数</div><div class="line">class NameList(list): #继承内置的类list</div><div class="line">    def __init__(self, a_name):</div><div class="line">        list.__init__([])</div><div class="line">        self.name=a_name</div></pre></td></tr></table></figure>
+<p>生成动态内容的过程：通用网关接口（Common Gateway Interface，CGI），符合这个标准的程序通常称为CGI脚本。<br>Web应用遵循模型-视图-控制器（Model-View-Controller, MVC）<br>dir() #显示当前文件夹下的目录<br>yate代码（内容太多，直接拍照）<br><img src="/2017/04/22/Python-Head-First学习笔记/python-head-first-1.jpeg" alt="logo"><br><img src="/2017/04/22/Python-Head-First学习笔记/python-head-first-2.jpeg" alt="logo"></p>
+<p>CGI脚本一般都存放在一个名为cgi-bin的特殊文件夹下<br>用Python构建一个Web服务器必须有这五行代码（以下图片）<br><img src="/2017/04/22/Python-Head-First学习笔记/python-head-first-3.jpeg" alt="logo"></p>
+<p>在CGI脚本最前面增加这两行代码，启用Python的CGI跟踪技术  </p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">import</span> cgitb</div><div class="line">cgitb.enable()</div></pre></td></tr></table></figure>
+<p>标准库glob模块非常适合处理文件名列表</p>
+<p>SL4A（Scripting Layer for Android）支持Python2，而不是Python3<br>最简单的Android模拟器的Python脚本：</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">import</span> android</div><div class="line">app = android.Android()</div><div class="line">msg = <span class="string">'Hello World'</span></div><div class="line">app.makeToast(msg)</div></pre></td></tr></table></figure>
+<p>JavaScript对象记法：JSON ObjectNotation：一个易于使用而且与语言无关的数据交换格式  </p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">import</span> json</div><div class="line">json.dump(names) <span class="comment">#将Python多重列表转换为一个JSON多重列表</span></div><div class="line">json.loads(name) <span class="comment">#将JSON多重列表转换为Python能理解的格式</span></div></pre></td></tr></table></figure>
+<p>手机上安装AndFTP应用，允许在计算机和Android手机之间通过FTP、SFTP和FTPS传输文件<br>AVD：一个Android虚拟设备，允许在你的计算机上模拟Android设备  </p>
+<p>在Android手机上，可以使用dialogGetInput()方法得到用户的输入<br>import sqlite3 #利用python的数据库API<br><img src="/2017/04/22/Python-Head-First学习笔记/python-head-first-4.jpeg" alt="logo"></p>
+<p>PS: UTF-8 编码是一种被广泛应用的编码，这种编码致力于把全球的语言纳入一个统一的编码，目前已经将几种亚洲语言纳入。UTF 代表 UCS Transformation Format.<br>raise可以引发一个异常<br>子类会覆盖父类的函数：多态<br>如果试图获取不存在的属性，会抛出AttributeError的错误，比如类中一个对象用了self.<strong>age来定义  
+</strong>slots__ = (‘name’, ‘age’) #用tuple定义允许绑定的属性名称<br>Python内置的@property装饰可以把一个方法变成属性调用的<br>print ‘Run child process %s (%s)…’ % (name, os.getpid())  #%s的内容可以在后面写出来<br>parseaddr()可以用来解析其中的电子邮件地址<br>JAVA中的Map模板与Python中的字典cheese类似  </p>
+
+      
+    </div>
+
+    <div>
+      
+        
+
+      
+    </div>
+
+    <div>
+      
+        
+
+      
+    </div>
+
+    <div>
+      
+        
+
+      
+    </div>
+
+    <footer class="post-footer">
+      
+
+      
+        
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+          </div>
+
+          <span class="post-nav-divider"></span>
+
+          <div class="post-nav-prev post-nav-item">
+            
+              <a href="/2017/04/21/JAVA-Head-First学习笔记/" rel="prev" title="JAVA Head First学习笔记">
+                JAVA Head First学习笔记 <i class="fa fa-chevron-right"></i>
+              </a>
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
+  </article>
+
+
+
+    <div class="post-spread">
+      
+    </div>
+  </div>
+
+
+          </div>
+          
+
+
+          
+  <div class="comments" id="comments">
+    
+  </div>
+
+
+        </div>
+        
+          
+  
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
+  </div>
+
+  <aside id="sidebar" class="sidebar">
+    <div class="sidebar-inner">
+
+      
+
+      
+
+      <section class="site-overview sidebar-panel sidebar-panel-active">
+        <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+          <img class="site-author-image" itemprop="image"
+               src="/images/头像.jpeg"
+               alt="冯炽" />
+          <p class="site-author-name" itemprop="name">冯炽</p>
+           
+              <p class="site-description motion-element" itemprop="description">天行健，君子以自强不息。</p>
+          
+        </div>
+        <nav class="site-state motion-element">
+
+          
+            <div class="site-state-item site-state-posts">
+              <a href="/archives">
+                <span class="site-state-item-count">2</span>
+                <span class="site-state-item-name">日志</span>
+              </a>
+            </div>
+          
+
+          
+            
+            
+            <div class="site-state-item site-state-categories">
+              <a href="/categories/index.html">
+                <span class="site-state-item-count">1</span>
+                <span class="site-state-item-name">分类</span>
+              </a>
+            </div>
+          
+
+          
+            
+            
+            <div class="site-state-item site-state-tags">
+              <a href="/tags/index.html">
+                <span class="site-state-item-count">3</span>
+                <span class="site-state-item-name">标签</span>
+              </a>
+            </div>
+          
+
+        </nav>
+
+        
+          <div class="feed-link motion-element">
+            <a href="/atom.xml" rel="alternate">
+              <i class="fa fa-rss"></i>
+              RSS
+            </a>
+          </div>
+        
+
+        <div class="links-of-author motion-element">
+          
+            
+              <span class="links-of-author-item">
+                <a href="" target="_blank" title="GitHub">
+                  
+                    <i class="fa fa-fw fa-github"></i>
+                  
+                  GitHub
+                </a>
+              </span>
+            
+              <span class="links-of-author-item">
+                <a href="" target="_blank" title="Weibo">
+                  
+                    <i class="fa fa-fw fa-weibo"></i>
+                  
+                  Weibo
+                </a>
+              </span>
+            
+              <span class="links-of-author-item">
+                <a href="" target="_blank" title="Others">
+                  
+                    <i class="fa fa-fw fa-globe"></i>
+                  
+                  Others
+                </a>
+              </span>
+            
+          
+        </div>
+
+        
+        
+
+        
+        
+
+        
+
+
+      </section>
+
+      
+
+      
+
+    </div>
+  </aside>
+
+
+        
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        <div class="copyright" >
+  
+  &copy; 
+  <span itemprop="copyrightYear">2017</span>
+  <span class="with-love">
+    <i class="fa fa-heart"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">冯炽</span>
+</div>
+
+
+<div class="powered-by">
+  由 <a class="theme-link" href="https://hexo.io">Hexo</a> 强力驱动
+</div>
+
+<div class="theme-info">
+  主题 -
+  <a class="theme-link" href="https://github.com/iissnan/hexo-theme-next">
+    NexT.Pisces
+  </a>
+</div>
+
+
+        
+
+        
+      </div>
+    </footer>
+
+    
+      <div class="back-to-top">
+        <i class="fa fa-arrow-up"></i>
+        
+      </div>
+    
+
+  </div>
+
+  
+
+<script type="text/javascript">
+  if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
+    window.Promise = null;
+  }
+</script>
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  <script type="text/javascript" src="/lib/jquery/index.js?v=2.1.3"></script>
+
+  
+  <script type="text/javascript" src="/lib/fastclick/lib/fastclick.min.js?v=1.0.6"></script>
+
+  
+  <script type="text/javascript" src="/lib/jquery_lazyload/jquery.lazyload.js?v=1.9.7"></script>
+
+  
+  <script type="text/javascript" src="/lib/velocity/velocity.min.js?v=1.2.1"></script>
+
+  
+  <script type="text/javascript" src="/lib/velocity/velocity.ui.min.js?v=1.2.1"></script>
+
+  
+  <script type="text/javascript" src="/lib/fancybox/source/jquery.fancybox.pack.js?v=2.1.5"></script>
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/utils.js?v=5.1.0"></script>
+
+  <script type="text/javascript" src="/js/src/motion.js?v=5.1.0"></script>
+
+
+
+  
+  
+
+
+  <script type="text/javascript" src="/js/src/affix.js?v=5.1.0"></script>
+
+  <script type="text/javascript" src="/js/src/schemes/pisces.js?v=5.1.0"></script>
+
+
+
+  
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.1.0"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=5.1.0"></script>
+
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/bootstrap.js?v=5.1.0"></script>
+
+
+
+  
+
+
+  
+
+
+
+
+	
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+  
+
+  
+
+  
+
+  
+
+</body>
+</html>
