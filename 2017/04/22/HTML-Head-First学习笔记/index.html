@@ -1,0 +1,799 @@
+<!doctype html>
+
+
+
+  
+
+
+<html class="theme-next pisces use-motion" lang="zh-Hans">
+<head>
+  <meta charset="UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
+
+
+
+
+
+
+<meta http-equiv="Cache-Control" content="no-transform" />
+<meta http-equiv="Cache-Control" content="no-siteapp" />
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+  <link href="/lib/fancybox/source/jquery.fancybox.css?v=2.1.5" rel="stylesheet" type="text/css" />
+
+
+
+
+  
+  
+  
+  
+
+  
+    
+    
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+    
+    
+    <link href="//fonts.googleapis.com/css?family=Lato:300,300italic,400,400italic,700,700italic&subset=latin,latin-ext" rel="stylesheet" type="text/css">
+  
+
+
+
+
+
+
+<link href="/lib/font-awesome/css/font-awesome.min.css?v=4.6.2" rel="stylesheet" type="text/css" />
+
+<link href="/css/main.css?v=5.1.0" rel="stylesheet" type="text/css" />
+
+
+  <meta name="keywords" content="Head First,学习笔记,HTML," />
+
+
+
+
+
+  <link rel="alternate" href="/atom.xml" title="冯炽" type="application/atom+xml" />
+
+
+
+
+  <link rel="shortcut icon" type="image/x-icon" href="/favicon.ico?v=5.1.0" />
+
+
+
+
+
+
+<meta name="description" content="在掌赢科技实习期间，组内有每周的头脑风暴环节。所谓的头脑风暴，就是大家每周在会议室开个小会，然后讲解说一下自己有什么好的想法，能够为团队的效率提升作出贡献。因为我们的BUG单都是提交到mantis上面，而每一个版本的迭代都是要求BUG解决率的，当BUG解决率达到80%以上时，且没有严重以及加急BUG时，才允许发布。由于我们看BUG解决率只能在服务器的一个php网页上查看，而开发团队那边拥有一个自己">
+<meta name="keywords" content="Head First,学习笔记,HTML">
+<meta property="og:type" content="article">
+<meta property="og:title" content="HTML Head First学习笔记">
+<meta property="og:url" content="http://yoursite.com/2017/04/22/HTML-Head-First学习笔记/index.html">
+<meta property="og:site_name" content="冯炽">
+<meta property="og:description" content="在掌赢科技实习期间，组内有每周的头脑风暴环节。所谓的头脑风暴，就是大家每周在会议室开个小会，然后讲解说一下自己有什么好的想法，能够为团队的效率提升作出贡献。因为我们的BUG单都是提交到mantis上面，而每一个版本的迭代都是要求BUG解决率的，当BUG解决率达到80%以上时，且没有严重以及加急BUG时，才允许发布。由于我们看BUG解决率只能在服务器的一个php网页上查看，而开发团队那边拥有一个自己">
+<meta property="og:updated_time" content="2017-04-23T07:57:08.000Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="HTML Head First学习笔记">
+<meta name="twitter:description" content="在掌赢科技实习期间，组内有每周的头脑风暴环节。所谓的头脑风暴，就是大家每周在会议室开个小会，然后讲解说一下自己有什么好的想法，能够为团队的效率提升作出贡献。因为我们的BUG单都是提交到mantis上面，而每一个版本的迭代都是要求BUG解决率的，当BUG解决率达到80%以上时，且没有严重以及加急BUG时，才允许发布。由于我们看BUG解决率只能在服务器的一个php网页上查看，而开发团队那边拥有一个自己">
+
+
+
+<script type="text/javascript" id="hexo.configurations">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    root: '/',
+    scheme: 'Pisces',
+    sidebar: {"position":"left","display":"post","offset":12,"offset_float":0,"b2t":false,"scrollpercent":false},
+    fancybox: true,
+    motion: true,
+    duoshuo: {
+      userId: '0',
+      author: '博主'
+    },
+    algolia: {
+      applicationID: '',
+      apiKey: '',
+      indexName: '',
+      hits: {"per_page":10},
+      labels: {"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}
+    }
+  };
+</script>
+
+
+
+  <link rel="canonical" href="http://yoursite.com/2017/04/22/HTML-Head-First学习笔记/"/>
+
+
+
+
+
+  <title> HTML Head First学习笔记 | 冯炽 </title>
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+    
+  
+
+  <div class="container sidebar-position-left page-post-detail ">
+    <div class="headband"></div>
+
+    <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-wrapper">
+  <div class="site-meta ">
+    
+
+    <div class="custom-logo-site-title">
+      <a href="/"  class="brand" rel="start">
+        <span class="logo-line-before"><i></i></span>
+        <span class="site-title">冯炽</span>
+        <span class="logo-line-after"><i></i></span>
+      </a>
+    </div>
+      
+        <p class="site-subtitle">天行健，君子以自强不息。</p>
+      
+  </div>
+
+  <div class="site-nav-toggle">
+    <button>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+    </button>
+  </div>
+</div>
+
+<nav class="site-nav">
+  
+
+  
+    <ul id="menu" class="menu">
+      
+        
+        <li class="menu-item menu-item-home">
+          <a href="/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-home"></i> <br />
+            
+            首页
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-categories">
+          <a href="/categories" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-th"></i> <br />
+            
+            分类
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-archives">
+          <a href="/archives" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-archive"></i> <br />
+            
+            归档
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-about">
+          <a href="/about" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-user"></i> <br />
+            
+            关于
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-tags">
+          <a href="/tags" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-tags"></i> <br />
+            
+            标签
+          </a>
+        </li>
+      
+
+      
+    </ul>
+  
+
+  
+</nav>
+
+
+
+ </div>
+    </header>
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          <div id="content" class="content">
+            
+
+  <div id="posts" class="posts-expand">
+    
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2017/04/22/HTML-Head-First学习笔记/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="冯炽">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/头像.jpeg">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="冯炽">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+            
+            
+              
+                HTML Head First学习笔记
+              
+            
+          </h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2017-04-22T23:13:27+08:00">
+                2017-04-22
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+            <span class="post-category" >
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/HTML/" itemprop="url" rel="index">
+                    <span itemprop="name">HTML</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        <p>在掌赢科技实习期间，组内有每周的头脑风暴环节。所谓的头脑风暴，就是大家每周在会议室开个小会，然后讲解说一下自己有什么好的想法，能够为团队的效率提升作出贡献。因为我们的BUG单都是提交到mantis上面，而每一个版本的迭代都是要求BUG解决率的，当BUG解决率达到80%以上时，且没有严重以及加急BUG时，才允许发布。由于我们看BUG解决率只能在服务器的一个php网页上查看，而开发团队那边拥有一个自己的进度网页，是之前他们自己设计的。我们团队也想这样来设计一个属于我们测试团队的网页<a id="more"></a>,通过在开发部门的电视投影上能够让所有路过的员工看到我们组和Android和iOS的进度。因此我们提出了这个倡议。leader同意了我们来做这个东西。之后我们就开始学习HTML+CSS了，其中也包括与后台服务器连接的PHP。虽然这个需求内容不是太复杂，但是通过这个小项目也让我学习到了一些关于前端和PHP的知识。以下是HTML的学习笔记内容。  </p>
+<p>元素=开始标记+内容+结束标记<br>CSS是层叠样式表(Cascading Style Sheets)<br>list item == li 放在列表每一行的前后<br>ol == ordered list有序列表，ul == unordered list无序列表，将整个列表包围起来<br>有序列表是有序号，无序列表只是列出来<br>ol和li要一起使用<br>q是一个内敛元素，在行内出现，表示引用，blockquote是一个块元素，可以表示引用一块内容，前后各有一个换行<br>code用来显示计算机程序代码<br>br表示换行<br>&amp;放在前面，后面有对应的编码然后会对应每一个特殊字符<br>测试服务器会根据端口来区分，一般都是使用80，而一些测试服务器则会使用8000等，比如<a href="http://www.mydomain.com:8000/index.html" target="_blank" rel="external">http://www.mydomain.com:8000/index.html</a><br>定义了id以后，就可以使用#来定位到这个id，比如</p>
+<figure class="highlight html"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line"><span class="tag">&lt;<span class="name">a</span> <span class="attr">href</span>=<span class="string">"index.html#chai"</span>&gt;</span>See Char Tea<span class="tag">&lt;/<span class="name">a</span>&gt;</span></div></pre></td></tr></table></figure>
+<p>a元素后面可以加一个target=”_blank”表示在新窗口中打开超链接<br>img元素是一个内敛元素，它不会在之前或之后插入换行<br>alt属性可以指定描述图像的一类文本，当图片加载失败时，会读出alt文本来代替图像<br>width和height也是图片的属性，但是即使设置了width和height，浏览器也会先下载完整图像<br>photoshop elements可以方便对图片进行编辑，例如save for web等操作<br>HTML5在文档最开头加一句：&lt;!doctype html&gt; html不会再有新的版本，具有向后兼容性<br>W3C验证工具：<a href="http://validator.w3.org/" target="_blank" rel="external">http://validator.w3.org/</a>   ——验证html格式是否有错误<br>要为WEB页面指定一个Unicode，需要在HTML中增加一个meta标记，这样写：<meta charset="utf-8">该标记放到head元素中<br>html元素，不能没有它，必须在最上面标定它<br>只有head和body元素可以放在html元素中，所以所有其他元素都必须放在head和或者body元素中<br>一定要在head中加一个title元素，只能在head元素中放置title、meta和style元素<br>w3c是万维网协会的简称 world wide web consortium<br>alt属性在img元素中的必要属性<br>CSS Pocket Reference是一本不错的小书，可以方便查询CSS样式<br>要为HTML增加CSS样式，需要在head元素中增加开始和结束style标记<br>p{<br>     color: maroon:<br>}//指定为茶红色颜色<br>可以同时为多个元素增加样式，只需要在两个选择器之间增加一个逗号比如h1,h2{}<br>可以单独创建css文件，里面不需要在增加style元素等，该文件中只使用css<br>使用link元素链接到css文件，举例：link type=”text/css”   rel=”stylesheet” href=”lounge.css”<br>把元素增加到一个类中，可以单独为p元素中的内容分配样式，比如p class=”greentea”<br>在css中写的时候可以写一个p.greentea{}<br>如果只写.greentea{}，则会应用到所有定义过这个类的地方，所有使用这个类的元素都会变成相同的样式<br>元素可以加入多个类，比如p class=”greentea raspberry blueberry”<br>font-size, font-family, color, font-weight, text-decoration（下划线或者划掉之类）<br>font-family内可以设置多个字体，在写的时候要注意大小写要与字体名完全一致，这样在浏览器没有第一个字体时，可以转换到第二个字体去进行设置<br>一个字体中如果包含多个单词，就用双引号把它们括起来<br>google的字体托管服务是免费的，可以把字体放在上面为web上的用户提供字体woff字体 web open font format web开放字体格式<br>网上有一些在线字体服务，可以将自己的字体放到其他网站的服务器上，比如wickedlysmart.com网站<br>font-size使用px为单位调整字体大小<br>指定字体大小的一种方式：body:small  h1 150%  h2  120%<br>/#cc6600是256*256*256色，其中cc表示红中的比例，66表示绿中的比例，00表示蓝中的比例<br>line-height指定文本中各行之间的垂直间距量<br>盒模型，利用CSS设计盒模型可以达到很好的效果<br>利用margin属性可以为内容周围增加XXpx的外边距<br>利用background-image属性可以为元素增加一个背景图片，background-repeat: no-repeat，background-position: top left<br>要用id来选择一个段落，就要在id前面使用一个#字符<br>当使用多个样式表时，最下面的样式表优先，因为它在HTML中最后链接<br>可以在link中添加一个media类型，这样每个样式就可以指定在不同的设备上运行，比如media = “screen and (max-device-width:480px)” 屏幕宽度不超过480像素<br>当需要在平板电脑或者手机上设置css样式时，只需要link中设置不同的media属性就可以，根据每个设备的max-device-width进行设置即可  </p>
+<p>用<code>&lt;div&gt;</code>为网页区分不同的块，可以在每个块中指定它的id，根据它的id为它指定样式<br>div结构也可以进行嵌套，比如动物中包含猫<br>width的属性只指定内容区的宽度<br>利用CSS选择子孙元素，可以利用div h2{} 其中div表示父元素，h2表示div的子孙元素，也可以为div指定一个id，然后利用他的id说明，#id h2{}，可以直接指定他的某个孩子甚至更深的孩子  </p>
+<figure class="highlight html"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line"><span class="tag">&lt;<span class="name">pan</span> <span class="attr">class</span>=<span class="string">"cd"</span>&gt;</span><span class="tag">&lt;/<span class="name">span</span>&gt;</span></div></pre></td></tr></table></figure>
+<p>然后利用.cd {}<br>a:link{} a:visited{}该选择器适用于已访问的链接 a:hover{}悬停在一个链接上时会应用这个选择器<br>section、article、aside、nav、header、footer是一些可以帮助建立界面结构的新元素<br>section用于相关的内容分组<br>article用于类似博客帖子、论坛帖子和新闻报道等独立的内容<br>time元素用来标记时间和日期<br>video是一个新的HMTL元素，用于页面增加视频<br>表格ex.  </p>
+<figure class="highlight html"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div></pre></td><td class="code"><pre><div class="line"><span class="tag">&lt;<span class="name">table</span>&gt;</span></div><div class="line">     <span class="tag">&lt;<span class="name">tr</span>&gt;</span></div><div class="line">          <span class="tag">&lt;<span class="name">th</span>&gt;</span><span class="tag">&lt;/<span class="name">th</span>&gt;</span></div><div class="line">     <span class="tag">&lt;/<span class="name">tr</span>&gt;</span></div><div class="line">     <span class="tag">&lt;<span class="name">tr</span>&gt;</span></div><div class="line">     <span class="tag">&lt;/<span class="name">tr</span>&gt;</span></div><div class="line"><span class="tag">&lt;/<span class="name">table</span>&gt;</span></div></pre></td></tr></table></figure>
+<p>使用caption元素提供关于表格的额外信息<br>使用CSS nth-child伪类可以为表格隔行增加背景颜色<br>要让数据单元格需要跨多行或多列，可以使用td元素的rowspan或colspan属性</p>
+<p>form表单：</p>
+<figure class="highlight html"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line"><span class="tag">&lt;<span class="name">form</span> <span class="attr">action</span>=<span class="string">"http://wickedlysmart.com/hfhtmlcss/contest.php"</span> <span class="attr">method</span>=<span class="string">"POST"</span>&gt;</span><span class="tag">&lt;/<span class="name">form</span>&gt;</span></div></pre></td></tr></table></figure>
+<p>不仅包含构成表单的所有元素，还会告诉浏览器当你提交表单时要把表单数据发送到哪里，脚本的URL放到form元素的action中  </p>
+<figure class="highlight html"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">First name: <span class="tag">&lt;<span class="name">input</span> <span class="attr">type</span>=<span class="string">"text"</span> <span class="attr">name</span>=<span class="string">"firstname"</span> <span class="attr">value</span>=<span class="string">" "</span>&gt;</span>  </div><div class="line"></div><div class="line"><span class="tag">&lt;<span class="name">input</span> <span class="attr">type</span>=<span class="string">"submit"</span>&gt;</span></div></pre></td></tr></table></figure>
+<p>还有单选按钮输入：</p>
+<figure class="highlight html"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line"><span class="tag">&lt;<span class="name">input</span> <span class="attr">type</span>=<span class="string">"radio"</span> <span class="attr">name</span>=<span class="string">"XXX"</span> <span class="attr">value</span>=<span class="string">"hot"</span>&gt;</span></div></pre></td></tr></table></figure>
+<p>复选框输入：type=”checkbox”<br>select元素提供一个菜单控件，</p>
+<figure class="highlight html"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line"><span class="tag">&lt;<span class="name">select</span> <span class="attr">name</span>=<span class="string">"characters"</span>&gt;</span></div><div class="line">     <span class="tag">&lt;<span class="name">option</span> <span class="attr">value</span>=<span class="string">""</span>&gt;</span>XX<span class="tag">&lt;/<span class="name">option</span>&gt;</span></div><div class="line">     ...</div><div class="line"><span class="tag">&lt;/<span class="name">select</span>&gt;</span></div></pre></td></tr></table></figure>
+<p>另外还有数字输入、范围输入、颜色输入等，number、range、color、data、email、tel、url等<br>一行的文本使用text，如果多行文本，使用textarea<br>POST打包表单变量，在后台把它们发送到服务器，GET也会打包表单变量，会把这些数据追加到URL的最后，然后向服务器发送一个请求<br>type还可以选择password、file文件输入等<br>input中有一个属性是placeholder是默认填的内容，输入自己的内容后，把原来的覆盖<br>required属性表示这个域必须有一个值，表单才能正常提交  </p>
+<p>其中基础知识的学习还使用了<a href="=" http:="" www.w3school.com.cn="" html="" html_doctype.asp="">w3school</a>教程，以下为w3school的读书笔记。</p>
+<p>HTML段落： </p>
+<figure class="highlight html"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div></pre></td><td class="code"><pre><div class="line"><span class="tag">&lt;<span class="name">p</span>&gt;</span>这是一个段落。<span class="tag">&lt;/<span class="name">p</span>&gt;</span>  </div><div class="line">```  </div><div class="line">HTML 链接：  </div><div class="line"></div><div class="line">```html</div><div class="line"><span class="tag">&lt;<span class="name">a</span> <span class="attr">href</span>=<span class="string">"http://www.runoob.com"</span>&gt;</span>这是一个链接<span class="tag">&lt;/<span class="name">a</span>&gt;</span>  </div><div class="line">HTML 图像：<span class="tag">&lt;<span class="name">img</span> <span class="attr">src</span>=<span class="string">"w3cschool.png"</span> <span class="attr">width</span>=<span class="string">"104"</span> <span class="attr">height</span>=<span class="string">"142"</span>&gt;</span></div></pre></td></tr></table></figure>
+<p>起始标签（opening tag），闭合标签（closing tag）  </p>
+<p><code>&lt;br/&gt;</code><br>HTML链接由<code>&lt;a&gt;</code>标签定义，链接的地址在href属性中指定。</p>
+<figure class="highlight html"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line"><span class="tag">&lt;<span class="name">a</span> <span class="attr">href</span>=<span class="string">"http://www.runoob.com"</span>&gt;</span>这是一个链接<span class="tag">&lt;/<span class="name">a</span>&gt;</span></div></pre></td></tr></table></figure>
+<p>推荐使用小写属性<br>标题：<br><code>&lt;h1&gt;这是一个标题。&lt;/h1&gt;</code><br><code>&lt;h2&gt;这是一个标题。&lt;/h2&gt;</code><br><code>&lt;h3&gt;这是一个标题。&lt;/h3&gt;</code><br>h后面的数字表示字号大小不同，越大越小，浏览器会自动的在标题前后添加空行<br>hr 元素可用于分隔内容 <code>&lt;hr&gt;</code>  </p>
+<figure class="highlight html"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line"><span class="comment">&lt;!-- 这是一个注释 --&gt;</span></div></pre></td></tr></table></figure>
+<p><head> 元素包含了所有的头部标签元素。在 <head>元素中你可以插入脚本（scripts）, 样式文件（CSS），及各种meta信息。可以添加在头部区域的元素标签为:<br><code>&lt;title&gt;, &lt;style&gt;, &lt;meta&gt;, &lt;link&gt;, &lt;script&gt;, &lt;noscript&gt;, and &lt;base&gt;</code>  </head></head></p>
+<p><base> 标签描述了基本的链接地址/链接目标，该标签作为HTML文档中所有的链接标签的默认链接<br>CSS 是在 HTML 4 开始使用的,是为了更好的渲染HTML元素而引入的.<br>CSS 可以通过以下方式添加到HTML中:  </p>
+<ul>
+<li>内联样式- 在HTML元素中使用”style” 属性  </li>
+<li>内部样式表- 在HTML文档头部 <code>&lt;head&gt;</code> 区域使用<code>&lt;style&gt;</code> 元素 来包含CSS  </li>
+<li>外部引用- 使用外部 CSS 文件  </li>
+</ul>
+<p><code>&lt;img src=&quot;url&quot; /&gt;</code>, URL指存储图像的位置。如果名为 “boat.gif” 的图像位于 www.w3school.com.cn 的 images 目录中，那么其 URL 为 <a href="http://www.w3school.com.cn/images/boat.gif" target="_blank" rel="external">http://www.w3school.com.cn/images/boat.gif</a><br>alt 属性用来为图像定义一串预备的可替换的文本。替换文本属性的值是用户定义的。<code>&lt;img src=&quot;boat.gif&quot; alt=&quot;Big Boat&quot;&gt;</code><br>表格由 <code>&lt;table&gt;</code> 标签来定义。每个表格均有若干行（由 <code>&lt;tr&gt;</code> 标签定义），每行被分割为若干单元格（由 <code>&lt;td&gt;</code> 标签定义）。字母 td 指表格数据（table data），即数据单元格的内容。数据单元格可以包含文本、图片、列表、段落、表单、水平线、表格等等。<br>无序列表始于 <code>&lt;ul&gt;</code> 标签。每个列表项始于 <code>&lt;li&gt;</code>。<br>大多数 HTML 元素被定义为块级元素或内联元素。编者注：“块级元素”译为 block level element，“内联元素”译为 inline element。<br>块级元素在浏览器显示时，通常会以新行来开始（和结束）。例子：</p>
+<figure class="highlight html"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line"><span class="tag">&lt;<span class="name">h1</span>&gt;</span>, <span class="tag">&lt;<span class="name">p</span>&gt;</span>, <span class="tag">&lt;<span class="name">ul</span>&gt;</span>, <span class="tag">&lt;<span class="name">table</span>&gt;</span></div></pre></td></tr></table></figure>
+<p>内联元素在显示时通常不会以新行开始。例子：</p>
+<figure class="highlight html"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line"><span class="tag">&lt;<span class="name">b</span>&gt;</span>, <span class="tag">&lt;<span class="name">td</span>&gt;</span>, <span class="tag">&lt;<span class="name">a</span>&gt;</span>, <span class="tag">&lt;<span class="name">img</span>&gt;</span></div></pre></td></tr></table></figure>
+<p>HTML <code>&lt;div&gt;</code> 元素是块级元素，它是可用于组合其他 HTML 元素的容器。<br>HTML 表单用于搜集不同类型的用户输入。<br><code>&lt;iframe src=&quot;URL&quot;&gt;&lt;/iframe&gt;</code> 用于显示内敛框架<br>字符实体前面加&amp;<br>scheme://host.domain:port/path/filename<br>解释：  </p>
+<ul>
+<li>scheme - 定义因特网服务的类型。最常见的类型是 http  </li>
+<li>host - 定义域主机（http 的默认主机是 www）  </li>
+<li>domain - 定义因特网域名，比如 w3school.com.cn  </li>
+<li>:port - 定义主机上的端口号（http 的默认端口号是 80）  </li>
+<li>path - 定义服务器上的路径（如果省略，则文档必须位于网站的根目录中）  </li>
+<li>filename - 定义文档/资源的名称</li>
+</ul>
+
+      
+    </div>
+
+    <div>
+      
+        
+
+      
+    </div>
+
+    <div>
+      
+        
+
+      
+    </div>
+
+    <div>
+      
+        
+
+      
+    </div>
+
+    <footer class="post-footer">
+      
+        <div class="post-tags">
+          
+            <a href="/tags/Head-First/" rel="tag"># Head First</a>
+          
+            <a href="/tags/学习笔记/" rel="tag"># 学习笔记</a>
+          
+            <a href="/tags/HTML/" rel="tag"># HTML</a>
+          
+        </div>
+      
+
+      
+        
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+          </div>
+
+          <span class="post-nav-divider"></span>
+
+          <div class="post-nav-prev post-nav-item">
+            
+              <a href="/2017/04/22/Python-Head-First学习笔记/" rel="prev" title="Python Head First学习笔记">
+                Python Head First学习笔记 <i class="fa fa-chevron-right"></i>
+              </a>
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
+  </article>
+
+
+
+    <div class="post-spread">
+      
+    </div>
+  </div>
+
+
+          </div>
+          
+
+
+          
+  <div class="comments" id="comments">
+    
+  </div>
+
+
+        </div>
+        
+          
+  
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
+  </div>
+
+  <aside id="sidebar" class="sidebar">
+    <div class="sidebar-inner">
+
+      
+
+      
+
+      <section class="site-overview sidebar-panel sidebar-panel-active">
+        <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+          <img class="site-author-image" itemprop="image"
+               src="/images/头像.jpeg"
+               alt="冯炽" />
+          <p class="site-author-name" itemprop="name">冯炽</p>
+           
+              <p class="site-description motion-element" itemprop="description">天行健，君子以自强不息。</p>
+          
+        </div>
+        <nav class="site-state motion-element">
+
+          
+            <div class="site-state-item site-state-posts">
+              <a href="/archives">
+                <span class="site-state-item-count">3</span>
+                <span class="site-state-item-name">日志</span>
+              </a>
+            </div>
+          
+
+          
+            
+            
+            <div class="site-state-item site-state-categories">
+              <a href="/categories/index.html">
+                <span class="site-state-item-count">3</span>
+                <span class="site-state-item-name">分类</span>
+              </a>
+            </div>
+          
+
+          
+            
+            
+            <div class="site-state-item site-state-tags">
+              <a href="/tags/index.html">
+                <span class="site-state-item-count">5</span>
+                <span class="site-state-item-name">标签</span>
+              </a>
+            </div>
+          
+
+        </nav>
+
+        
+          <div class="feed-link motion-element">
+            <a href="/atom.xml" rel="alternate">
+              <i class="fa fa-rss"></i>
+              RSS
+            </a>
+          </div>
+        
+
+        <div class="links-of-author motion-element">
+          
+            
+              <span class="links-of-author-item">
+                <a href="" target="_blank" title="GitHub">
+                  
+                    <i class="fa fa-fw fa-github"></i>
+                  
+                  GitHub
+                </a>
+              </span>
+            
+              <span class="links-of-author-item">
+                <a href="" target="_blank" title="Weibo">
+                  
+                    <i class="fa fa-fw fa-weibo"></i>
+                  
+                  Weibo
+                </a>
+              </span>
+            
+              <span class="links-of-author-item">
+                <a href="" target="_blank" title="Others">
+                  
+                    <i class="fa fa-fw fa-globe"></i>
+                  
+                  Others
+                </a>
+              </span>
+            
+          
+        </div>
+
+        
+        
+
+        
+        
+
+        
+
+
+      </section>
+
+      
+
+      
+
+    </div>
+  </aside>
+
+
+        
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        <div class="copyright" >
+  
+  &copy; 
+  <span itemprop="copyrightYear">2017</span>
+  <span class="with-love">
+    <i class="fa fa-heart"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">冯炽</span>
+</div>
+
+
+<div class="powered-by">
+  由 <a class="theme-link" href="https://hexo.io">Hexo</a> 强力驱动
+</div>
+
+<div class="theme-info">
+  主题 -
+  <a class="theme-link" href="https://github.com/iissnan/hexo-theme-next">
+    NexT.Pisces
+  </a>
+</div>
+
+
+        
+
+        
+      </div>
+    </footer>
+
+    
+      <div class="back-to-top">
+        <i class="fa fa-arrow-up"></i>
+        
+      </div>
+    
+
+  </div>
+
+  
+
+<script type="text/javascript">
+  if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
+    window.Promise = null;
+  }
+</script>
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  <script type="text/javascript" src="/lib/jquery/index.js?v=2.1.3"></script>
+
+  
+  <script type="text/javascript" src="/lib/fastclick/lib/fastclick.min.js?v=1.0.6"></script>
+
+  
+  <script type="text/javascript" src="/lib/jquery_lazyload/jquery.lazyload.js?v=1.9.7"></script>
+
+  
+  <script type="text/javascript" src="/lib/velocity/velocity.min.js?v=1.2.1"></script>
+
+  
+  <script type="text/javascript" src="/lib/velocity/velocity.ui.min.js?v=1.2.1"></script>
+
+  
+  <script type="text/javascript" src="/lib/fancybox/source/jquery.fancybox.pack.js?v=2.1.5"></script>
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/utils.js?v=5.1.0"></script>
+
+  <script type="text/javascript" src="/js/src/motion.js?v=5.1.0"></script>
+
+
+
+  
+  
+
+
+  <script type="text/javascript" src="/js/src/affix.js?v=5.1.0"></script>
+
+  <script type="text/javascript" src="/js/src/schemes/pisces.js?v=5.1.0"></script>
+
+
+
+  
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.1.0"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=5.1.0"></script>
+
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/bootstrap.js?v=5.1.0"></script>
+
+
+
+  
+
+
+  
+
+
+
+
+	
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+  
+
+  
+
+  
+
+  
+
+</body>
+</html>
