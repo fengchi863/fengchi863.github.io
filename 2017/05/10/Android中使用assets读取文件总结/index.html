@@ -74,7 +74,7 @@
 <link href="/css/main.css?v=5.1.0" rel="stylesheet" type="text/css" />
 
 
-  <meta name="keywords" content="Andorid,数据库," />
+  <meta name="keywords" content="Android," />
 
 
 
@@ -92,17 +92,17 @@
 
 
 
-<meta name="description" content="在开发easyEnglishLearning的过程中，我使用到了数据库。在这里我已经在外部创建好了数据库，数据库中存放了1000个常用的英文单词。在APP中首先要读取外部的数据库，然后存放到程序目录下，路径为/data/data/com.example.fengchi.easyenglishlearning/databases下。因此，为了调试方便，我们需要能够在adb shell中直接使用sql">
-<meta name="keywords" content="Andorid,数据库">
+<meta name="description" content="今天在做easyEnglishLearning的过程中，因为要读取本地的sql脚本，放置在Android目录下的assets文件夹中，搞了一个晚上一直在读取的时候发生FileNotFound错误，最后终于搞清楚了。">
+<meta name="keywords" content="Android">
 <meta property="og:type" content="article">
-<meta property="og:title" content="在adb shell中直接使用sqlite3命令操作数据库">
-<meta property="og:url" content="http://yoursite.com/2017/05/09/在adb-shell中直接使用sqlite3命令操作数据库/index.html">
+<meta property="og:title" content="Android中使用assets读取文件总结">
+<meta property="og:url" content="http://yoursite.com/2017/05/10/Android中使用assets读取文件总结/index.html">
 <meta property="og:site_name" content="冯炽">
-<meta property="og:description" content="在开发easyEnglishLearning的过程中，我使用到了数据库。在这里我已经在外部创建好了数据库，数据库中存放了1000个常用的英文单词。在APP中首先要读取外部的数据库，然后存放到程序目录下，路径为/data/data/com.example.fengchi.easyenglishlearning/databases下。因此，为了调试方便，我们需要能够在adb shell中直接使用sql">
-<meta property="og:updated_time" content="2017-05-09T14:22:13.000Z">
+<meta property="og:description" content="今天在做easyEnglishLearning的过程中，因为要读取本地的sql脚本，放置在Android目录下的assets文件夹中，搞了一个晚上一直在读取的时候发生FileNotFound错误，最后终于搞清楚了。">
+<meta property="og:updated_time" content="2017-05-10T14:46:37.000Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="在adb shell中直接使用sqlite3命令操作数据库">
-<meta name="twitter:description" content="在开发easyEnglishLearning的过程中，我使用到了数据库。在这里我已经在外部创建好了数据库，数据库中存放了1000个常用的英文单词。在APP中首先要读取外部的数据库，然后存放到程序目录下，路径为/data/data/com.example.fengchi.easyenglishlearning/databases下。因此，为了调试方便，我们需要能够在adb shell中直接使用sql">
+<meta name="twitter:title" content="Android中使用assets读取文件总结">
+<meta name="twitter:description" content="今天在做easyEnglishLearning的过程中，因为要读取本地的sql脚本，放置在Android目录下的assets文件夹中，搞了一个晚上一直在读取的时候发生FileNotFound错误，最后终于搞清楚了。">
 
 
 
@@ -130,13 +130,13 @@
 
 
 
-  <link rel="canonical" href="http://yoursite.com/2017/05/09/在adb-shell中直接使用sqlite3命令操作数据库/"/>
+  <link rel="canonical" href="http://yoursite.com/2017/05/10/Android中使用assets读取文件总结/"/>
 
 
 
 
 
-  <title> 在adb shell中直接使用sqlite3命令操作数据库 | 冯炽 </title>
+  <title> Android中使用assets读取文件总结 | 冯炽 </title>
 </head>
 
 <body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
@@ -275,7 +275,7 @@
   
 
   <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2017/05/09/在adb-shell中直接使用sqlite3命令操作数据库/">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2017/05/10/Android中使用assets读取文件总结/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="冯炽">
@@ -296,7 +296,7 @@
             
             
               
-                在adb shell中直接使用sqlite3命令操作数据库
+                Android中使用assets读取文件总结
               
             
           </h1>
@@ -311,8 +311,8 @@
               
                 <span class="post-meta-item-text">发表于</span>
               
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2017-05-09T21:30:10+08:00">
-                2017-05-09
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2017-05-10T22:39:42+08:00">
+                2017-05-10
               </time>
             
 
@@ -368,18 +368,10 @@
       
 
       
-        <p>在开发easyEnglishLearning的过程中，我使用到了数据库。在这里我已经在外部创建好了数据库，数据库中存放了1000个常用的英文单词。在APP中首先要读取外部的数据库，然后存放到程序目录下，路径为/data/data/com.example.fengchi.easyenglishlearning/databases下。因此，为了调试方便，我们需要能够在adb shell中直接使用sqlite3命令查看数据库是否存放正确。<br><a id="more"></a></p>
-<p>使用genymotion的模拟器可以直接在databases目录下使用sqlite3命令，而如果使用真机，则要求真机中有sqlite3才行，检查真机中是否存在sqlite3的方法是进入/system/xbin目录下，看该目录下是否有sqlite3包。以下为在genymotion模拟器下使用sqlite3的过程。</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line">adb shell</div><div class="line">su</div><div class="line">cd data/data/com.example.fengchi.easyenglishlearning/databases</div><div class="line">sqlite3 test.sql</div><div class="line">.tables  //查看该数据库中的表</div><div class="line">select * from table1  //列出table1表中的数据</div></pre></td></tr></table></figure>
-<p>其中，sqlite3中还有一些其他的语句，这些命令都是在sqlite&gt;下：</p>
-<ol>
-<li>.tables：显示此数据库中的所有表</li>
-<li>.show：显示格式的配置情况</li>
-<li>.schema：建表的模式(就是建表语句,个人观点)</li>
-<li>.mode：显示的格式,首先输入查询语句,在.show下的图中,我们看到mode默认是list,我目前用到了line和column模式</li>
-<li>headers on：显示字段名，也就是每一列的标题，比如stuId、name、age、sex等</li>
-</ol>
-
+        <p>今天在做easyEnglishLearning的过程中，因为要读取本地的sql脚本，放置在Android目录下的assets文件夹中，搞了一个晚上一直在读取的时候发生FileNotFound错误，最后终于搞清楚了。<br><a id="more"></a></p>
+<p>在Android Studio中assets文件夹是不会默认创建的，这和Eclipse不一样，所以我们就要手工创建这个文件夹就好了。刚开始我是直接右键-&gt;new-&gt;Directory来创建的assets文件夹，谁知道这并不会被AS编译器获取。正确的创建方法是在app文件夹上右键，选择new-&gt;Floder-&gt;Assets Floder，这样创建出来的assets文件夹才会被AS正确读取到。</p>
+<p>以下是读取时的程序:</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">try</span> &#123;</div><div class="line">    System.out.println(<span class="string">"路径:"</span>+Configuration.DB_PATH + <span class="string">"/"</span> + schemaName);</div><div class="line">    in = <span class="keyword">new</span> BufferedReader(<span class="keyword">new</span> InputStreamReader(mContext.getAssets()</div><div class="line">            .open(Configuration.DB_PATH + <span class="string">"/"</span> + schemaName)));</div><div class="line">    ...<span class="comment">//省略文件内容处理</span></div><div class="line">    &#125; <span class="keyword">catch</span> (IOException e) &#123;</div><div class="line">    Log.e(<span class="string">"db-error"</span>, e.toString());</div><div class="line">&#125; <span class="keyword">finally</span> &#123;</div><div class="line">    <span class="keyword">try</span> &#123;</div><div class="line">        <span class="keyword">if</span> (in != <span class="keyword">null</span>)</div><div class="line">            in.close();</div><div class="line">    &#125; <span class="keyword">catch</span> (IOException e) &#123;</div><div class="line">        Log.e(<span class="string">"db-error"</span>, e.toString());</div><div class="line">    &#125;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
       
     </div>
 
@@ -408,9 +400,7 @@
       
         <div class="post-tags">
           
-            <a href="/tags/Andorid/" rel="tag"># Andorid</a>
-          
-            <a href="/tags/数据库/" rel="tag"># 数据库</a>
+            <a href="/tags/Android/" rel="tag"># Android</a>
           
         </div>
       
@@ -423,18 +413,14 @@
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/2017/05/09/使用Glide加载图片时转换为圆形等其他效果/" rel="next" title="使用Glide加载图片时转换为圆形等其他效果">
-                <i class="fa fa-chevron-left"></i> 使用Glide加载图片时转换为圆形等其他效果
-              </a>
-            
           </div>
 
           <span class="post-nav-divider"></span>
 
           <div class="post-nav-prev post-nav-item">
             
-              <a href="/2017/05/02/Android图片加载与缓存开源框架-Android-Glide/" rel="prev" title="Android图片加载与缓存开源框架: Android Glide">
-                Android图片加载与缓存开源框架: Android Glide <i class="fa fa-chevron-right"></i>
+              <a href="/2017/05/10/Linux常用命令总结/" rel="prev" title="Linux常用命令总结">
+                Linux常用命令总结 <i class="fa fa-chevron-right"></i>
               </a>
             
           </div>
