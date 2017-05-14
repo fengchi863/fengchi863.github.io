@@ -99,12 +99,12 @@
 <meta property="og:url" content="http://yoursite.com/2017/05/14/Floyd算法求最短路径——Java/index.html">
 <meta property="og:site_name" content="冯炽">
 <meta property="og:description" content="前面讲述了利用贪心算法求解最短路径的两种算法，分别是BFS以及Dijkstra算法。接下来要介绍的这种是一种动态规划的算法——弗洛伊德算法。 用通俗的语言来描述的话，首先我们的目标是寻找从点i到点j的最短路径。从动态规划的角度看问题，我们需要为这个目标重新做一个诠释。从任意节点i到任意节点j的最短路径不外乎2种可能，1是直接从i到j，2是从i经过若干个节点k到j。所以，我们假设Dis(i,j)为节">
-<meta property="og:image" content="http://yoursite.com/2017/05/14/Floyd算法求最短路径——Java/Graph.jpg">
-<meta property="og:updated_time" content="2017-05-14T09:11:09.000Z">
+<meta property="og:image" content="http://yoursite.com/2017/05/14/Floyd算法求最短路径——Java/liucheng.jpg">
+<meta property="og:updated_time" content="2017-05-14T09:14:11.000Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Floyd算法求最短路径——Java">
 <meta name="twitter:description" content="前面讲述了利用贪心算法求解最短路径的两种算法，分别是BFS以及Dijkstra算法。接下来要介绍的这种是一种动态规划的算法——弗洛伊德算法。 用通俗的语言来描述的话，首先我们的目标是寻找从点i到点j的最短路径。从动态规划的角度看问题，我们需要为这个目标重新做一个诠释。从任意节点i到任意节点j的最短路径不外乎2种可能，1是直接从i到j，2是从i经过若干个节点k到j。所以，我们假设Dis(i,j)为节">
-<meta name="twitter:image" content="http://yoursite.com/2017/05/14/Floyd算法求最短路径——Java/Graph.jpg">
+<meta name="twitter:image" content="http://yoursite.com/2017/05/14/Floyd算法求最短路径——Java/liucheng.jpg">
 
 
 
@@ -371,13 +371,13 @@
 
       
         <p>前面讲述了利用贪心算法求解最短路径的两种算法，分别是BFS以及Dijkstra算法。接下来要介绍的这种是一种动态规划的算法——弗洛伊德算法。</p>
-<p>用通俗的语言来描述的话，首先我们的目标是寻找从点i到点j的最短路径。从动态规划的角度看问题，我们需要为这个目标重新做一个诠释。从任意节点i到任意节点j的最短路径不外乎2种可能，1是直接从i到j，2是从i经过若干个节点k到j。所以，我们假设Dis(i,j)为节点u到节点v的最短路径的距离，对于每一个节点k，我们检查Dis(i,k) + Dis(k,j) &lt; Dis(i,j)是否成立，如果成立，证明从i到k再到j的路径比i直接到j的路径短，我们便设置Dis(i,j) = Dis(i,k) + Dis(k,j)，这样一来，当我们遍历完所有节点k，Dis(i,j)中记录的便是i到j的最短路径的距离。</p>
+<p>用通俗的语言来描述的话，首先我们的目标是寻找从点i到点j的最短路径。从动态规划的角度看问题，我们需要为这个目标重新做一个诠释。从任意节点i到任意节点j的最短路径不外乎2种可能，1是直接从i到j，2是从i经过若干个节点k到j。所以，我们假设Dis(i,j)为节点u到节点v的最短路径的距离，对于每一个节点k，我们检查Dis(i,k) + Dis(k,j) &lt; Dis(i,j)是否成立，如果成立，证明从i到k再到j的路径比i直接到j的路径短，我们便设置Dis(i,j) = Dis(i,k) + Dis(k,j)，这样一来，当我们遍历完所有节点k，Dis(i,j)中记录的便是i到j的最短路径的距离。<br><a id="more"></a></p>
 <h5 id="算法描述："><a href="#算法描述：" class="headerlink" title="算法描述："></a>算法描述：</h5><ol>
 <li>从任意一条单边路径开始。所有两点之间的距离是边的权，如果两点之间没有边相连，则权为无穷大，这也是所谓的初始化工作；</li>
 <li>对于每一对顶点 u 和 v，看看是否存在一个顶点 w 使得从 u 到 w 再到 v 比己知的路径更短。如果是更新它。</li>
 </ol>
 <p>以下图为例，对Floyd 算法进行演示。</p>
-<p><img src="/2017/05/14/Floyd算法求最短路径——Java/Graph.jpg" alt="logo"></p>
+<p><img src="/2017/05/14/Floyd算法求最短路径——Java/liucheng.jpg" alt="logo"></p>
 <p>首先是算法的初始状态：矩阵S是记录各个顶点间最短路径的矩阵。</p>
 <p><strong>第1步：</strong><br>初始化S。矩阵S中顶点a[i][j]的距离为顶点i到顶点j的权值；如果i和j不相邻，则a[i][j]=∞。实际上，就是将图的原始矩阵复制到S中。<br>注:a[i][j]表示矩阵S中顶点i(第i个顶点)到顶点j(第j个顶点)的距离。</p>
 <p><strong>第2步：</strong><br>以顶点A(第1个顶点)为中介点，若a[i][j] &gt; a[i][0]+a[0][j]，则设置a[i][j]=a[i][0]+a[0][j]。<br>以顶点a[1][6]，上一步操作之后，a[1][6]=∞；而将A作为中介点时，(B,A)=12，(A,G)=14，因此B和G之间的距离可以更新为26。<br>同理，依次将顶点B,C,D,E,F,G作为中介点，并更新a[i][j]的大小。</p>
