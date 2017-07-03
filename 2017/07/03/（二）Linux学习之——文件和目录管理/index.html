@@ -74,7 +74,7 @@
 <link href="/css/main.css?v=5.1.0" rel="stylesheet" type="text/css" />
 
 
-  <meta name="keywords" content="Android,tips," />
+  <meta name="keywords" content="linux," />
 
 
 
@@ -92,17 +92,17 @@
 
 
 
-<meta name="description" content="有一次我使用handler，结果在new Handler的时候Android Studio自动生成了Handler中未覆盖的publish等三个方法，跟以前使用handler的时候不太一样。最后找到了原因所在。">
-<meta name="keywords" content="Android,tips">
+<meta name="description" content="第六章 Linux的文件权限与目录配置 Linux是个多用户、多任务的系统，因此可能常常会有多人同时使用这台主机来进行工作的情况发生 所有账号信息，包括root的相关信息，都记录在/etc/passwd这个文件夹内，个人的密码记录在/etc/shadow这个文件下，组名记录在/etc/group下，这三个文件是Linux系统账号、密码、用户组信息的集中地">
+<meta name="keywords" content="linux">
 <meta property="og:type" content="article">
-<meta property="og:title" content="在使用自动包导入时要注意">
-<meta property="og:url" content="http://yoursite.com/2017/04/27/在使用自动包导入时要注意/index.html">
+<meta property="og:title" content="（二）Linux学习之——文件和目录管理">
+<meta property="og:url" content="http://yoursite.com/2017/07/03/（二）Linux学习之——文件和目录管理/index.html">
 <meta property="og:site_name" content="冯炽的博客">
-<meta property="og:description" content="有一次我使用handler，结果在new Handler的时候Android Studio自动生成了Handler中未覆盖的publish等三个方法，跟以前使用handler的时候不太一样。最后找到了原因所在。">
-<meta property="og:updated_time" content="2017-04-27T02:51:06.000Z">
+<meta property="og:description" content="第六章 Linux的文件权限与目录配置 Linux是个多用户、多任务的系统，因此可能常常会有多人同时使用这台主机来进行工作的情况发生 所有账号信息，包括root的相关信息，都记录在/etc/passwd这个文件夹内，个人的密码记录在/etc/shadow这个文件下，组名记录在/etc/group下，这三个文件是Linux系统账号、密码、用户组信息的集中地">
+<meta property="og:updated_time" content="2017-07-03T12:40:16.000Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="在使用自动包导入时要注意">
-<meta name="twitter:description" content="有一次我使用handler，结果在new Handler的时候Android Studio自动生成了Handler中未覆盖的publish等三个方法，跟以前使用handler的时候不太一样。最后找到了原因所在。">
+<meta name="twitter:title" content="（二）Linux学习之——文件和目录管理">
+<meta name="twitter:description" content="第六章 Linux的文件权限与目录配置 Linux是个多用户、多任务的系统，因此可能常常会有多人同时使用这台主机来进行工作的情况发生 所有账号信息，包括root的相关信息，都记录在/etc/passwd这个文件夹内，个人的密码记录在/etc/shadow这个文件下，组名记录在/etc/group下，这三个文件是Linux系统账号、密码、用户组信息的集中地">
 
 
 
@@ -130,13 +130,13 @@
 
 
 
-  <link rel="canonical" href="http://yoursite.com/2017/04/27/在使用自动包导入时要注意/"/>
+  <link rel="canonical" href="http://yoursite.com/2017/07/03/（二）Linux学习之——文件和目录管理/"/>
 
 
 
 
 
-  <title> 在使用自动包导入时要注意 | 冯炽的博客 </title>
+  <title> （二）Linux学习之——文件和目录管理 | 冯炽的博客 </title>
 </head>
 
 <body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
@@ -275,7 +275,7 @@
   
 
   <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2017/04/27/在使用自动包导入时要注意/">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2017/07/03/（二）Linux学习之——文件和目录管理/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="冯炽">
@@ -296,7 +296,7 @@
             
             
               
-                在使用自动包导入时要注意
+                （二）Linux学习之——文件和目录管理
               
             
           </h1>
@@ -311,8 +311,8 @@
               
                 <span class="post-meta-item-text">发表于</span>
               
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2017-04-27T10:39:24+08:00">
-                2017-04-27
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2017-07-03T17:36:26+08:00">
+                2017-07-03
               </time>
             
 
@@ -334,8 +334,8 @@
               
               
                 <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/Android/" itemprop="url" rel="index">
-                    <span itemprop="name">Android</span>
+                  <a href="/categories/linux/" itemprop="url" rel="index">
+                    <span itemprop="name">linux</span>
                   </a>
                 </span>
 
@@ -368,9 +368,58 @@
       
 
       
-        <p>有一次我使用handler，结果在new Handler的时候Android Studio自动生成了Handler中未覆盖的publish等三个方法，跟以前使用handler的时候不太一样。最后找到了原因所在。<br><a id="more"></a></p>
-<p>错误原因：<br>自动import系统错将java.util.logging.Handler包import进来了</p>
-<p>解决方法：<br>手动去掉import java.util.logging.Handler<br>手动加上import android.os.Handler</p>
+        <h4 id="第六章-Linux的文件权限与目录配置"><a href="#第六章-Linux的文件权限与目录配置" class="headerlink" title="第六章 Linux的文件权限与目录配置"></a>第六章 Linux的文件权限与目录配置</h4><ol>
+<li>Linux是个多用户、多任务的系统，因此可能常常会有多人同时使用这台主机来进行工作的情况发生</li>
+<li>所有账号信息，包括root的相关信息，都记录在/etc/passwd这个文件夹内，个人的密码记录在/etc/shadow这个文件下，组名记录在/etc/group下，这三个文件是Linux系统账号、密码、用户组信息的集中地<a id="more"></a></li>
+<li>ls -al：列出所有文件详细的权限和属性，第一个字符代表这个文件是目录、文件或链接文件等</li>
+<li>三种权限是文件所有者的权限、同用户组的权限、其他非本用户组的权限</li>
+<li>文件信息包括比如：drwxr–r–</li>
+<li>chgrp：改变文件所属用户组<br>chown：改变文件所有者<br>chmod：改变文件的权限<br>以上三组命令都可以添加-R参数，表示recursive递归调用，即文件夹内的所有文件都应用更改</li>
+<li>cp复制行为会复制执行者的属性和权限</li>
+<li>rwx各个权限的分数分别为4，2，1</li>
+<li>在Windows下，一个文件是否具有执行能力是通过扩展名来判断的，例如.exe，.bat，.com等，但是在Linux下面，文件是否具有执行权限是由是否具有x这个权限来决定</li>
+<li>Linux的文件种类有：普通文件regular file，纯文本文件ASCII，二进制文件binary，数据格式文件data等</li>
+<li>目录的定义：/：与开机系统有关，/usr：与软件安装／执行有关，/var：与系统运作过程有关</li>
+<li>根目录/所在的分区应该越小越好，且应用程序所安装的软件最好不要与根目录放在同一个分区内</li>
+<li>根目录与开机有关，开机过程中只有根目录会被挂载，其他分区则是在开机完成之后才会持续进行挂载的行为</li>
+<li>.代表当前的目录，也可以使用./来表示；..代表上一层目录，也可以使用../来表示</li>
+<li>有五个目录不可以与根目录放在不同的分区，分别为/etc，/bin，/lib，/dev，/sbin这五个</li>
+</ol>
+<h4 id="第七章-Linux文件与目录管理"><a href="#第七章-Linux文件与目录管理" class="headerlink" title="第七章 Linux文件与目录管理"></a>第七章 Linux文件与目录管理</h4><ol>
+<li>cd用来切换目录</li>
+<li>～代表自己的主文件夹，cd ～vbird代表cd /home/vbird</li>
+<li>cd - 表示回到刚才的目录</li>
+<li>mkdir新建新目录</li>
+<li>rmdir删除“空”的目录</li>
+<li>为什么在任何地方都可以执行ls这个命令呢，因为环境变量PATH的帮助</li>
+<li>echo $PATH可以来查看有哪些目录被定义了echo有显示的意思，被查询出来目录用分号隔开，并且是有顺序的，哪个先被查询哪个就先被执行</li>
+<li>cp可以将多个数据一次复制到同一个目录中去，最后一定是目录</li>
+<li>rm移除文件或目录，通过通配符<em>，可以一次删除开头为bashrc的所有文件，rm -i bashrc\</em>，其中-i表示互动模式，在删除前询问用户是否操作</li>
+<li>文件内容查询使用cat，tac（从最后一行开始），more和less，-n表示打印出行号</li>
+<li>touch可以修改文件时间或创建新文件，mtime指modification time，内容改变时mtime改变；ctime指status time，权限和属性被改变时，ctime改变；atime指access time，文件的内容被取用时，atime改变</li>
+<li>默认情况下，ls显示出来的是文件的mtime</li>
+<li>touch命令最常被使用的两种情况是：创建一个空的文件，或者将某个文件日期修改为当前日期</li>
+<li>文件的默认权限是指文件在被创建时的被赋予的默认权限值。umask命令显示出来的权限是被拿掉的权限</li>
+<li>要设置umask的话，直接在umask后面输入002就好了（002可以修改为其他）</li>
+<li>设置和显示文件的隐藏属性的命令chattr和lsattr，这两个命令只能在Ext2/Ext3的文件系统上生效，chattr里有两个很重要的属性是+a和+i，+a表示这个文件只能增加数据，不能删除也不能修改数据；+i表示这个文件不能被删除改名设置连接也无法写入或添加数据</li>
+<li>SUID，SGID和SBIT是文件特殊权限</li>
+<li>file可以查看文件类型</li>
+<li>连续按两次Tab键可以知道用户有多少命令可以被执行</li>
+<li>whereis可以寻找特定的文件</li>
+</ol>
+<h4 id="第九章-文件与文件系统的压缩与打包"><a href="#第九章-文件与文件系统的压缩与打包" class="headerlink" title="第九章 文件与文件系统的压缩与打包"></a>第九章 文件与文件系统的压缩与打包</h4><ol>
+<li>Linux上常见的压缩命令为gzip与bzip2</li>
+<li>bzip2的压缩比比gzip要好</li>
+<li>使用compress扩展名自动创建为.Z，使用gzip扩展名自动创建为.gz，使用bzip2则是自动将扩展名构建为.bz2</li>
+<li>以上两个目录仅能够针对单个文件进行压缩，即使对目录使用，也是将目录里的文件分别进行压缩</li>
+<li>tar可以对目录进行一起压缩</li>
+<li>压缩：tar -jcv -f filename.tar.bz2<br>查询：tar -jtv -f filename.tar.bz2<br>解压缩：tar -jxv -f filename.tar.bz2 -C欲解压缩的目录</li>
+<li>想要在命令行下输入两行时，最后加上反斜杠\并立刻按下Enter就能在第二行继续输入了</li>
+<li>若想要针对文件系统进行备份或者是存储的功能时，使用dump命令</li>
+<li>光盘写入工具：构建镜像文件iso使用mkisofs命令；将镜像文件刻录到光盘或者DVD中，使用cdrecord命令</li>
+<li>一般默认情况下，所有要被加到镜像文件中的文件都会被放置到镜像文件中的根目录，使用-graft-point这个参数则可以使镜像文件中的目录所在=实际Linux文件系统的目录所在</li>
+<li>cdrecord是光盘刻录工具命令</li>
+</ol>
 
       
     </div>
@@ -400,9 +449,7 @@
       
         <div class="post-tags">
           
-            <a href="/tags/Android/" rel="tag"># Android</a>
-          
-            <a href="/tags/tips/" rel="tag"># tips</a>
+            <a href="/tags/linux/" rel="tag"># linux</a>
           
         </div>
       
@@ -415,18 +462,14 @@
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/2017/04/28/AlertDialog的使用总结/" rel="next" title="AlertDialog的使用总结">
-                <i class="fa fa-chevron-left"></i> AlertDialog的使用总结
-              </a>
-            
           </div>
 
           <span class="post-nav-divider"></span>
 
           <div class="post-nav-prev post-nav-item">
             
-              <a href="/2017/04/26/JSON数据流解析——本地Gson重建Json再转对象/" rel="prev" title="JSON数据流解析——本地Gson重建Json再转对象">
-                JSON数据流解析——本地Gson重建Json再转对象 <i class="fa fa-chevron-right"></i>
+              <a href="/2017/07/03/（一）Linux学习之——系统安装/" rel="prev" title="（一）Linux学习之——系统安装">
+                （一）Linux学习之——系统安装 <i class="fa fa-chevron-right"></i>
               </a>
             
           </div>
@@ -474,8 +517,17 @@
       
 
       
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap" >
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview">
+            站点概览
+          </li>
+        </ul>
+      
 
-      <section class="site-overview sidebar-panel sidebar-panel-active">
+      <section class="site-overview sidebar-panel">
         <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
           <img class="site-author-image" itemprop="image"
                src="/images/头像.jpeg"
@@ -573,6 +625,22 @@
 
       </section>
 
+      
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-4"><a class="nav-link" href="#第六章-Linux的文件权限与目录配置"><span class="nav-text">第六章 Linux的文件权限与目录配置</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#第七章-Linux文件与目录管理"><span class="nav-text">第七章 Linux文件与目录管理</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#第九章-文件与文件系统的压缩与打包"><span class="nav-text">第九章 文件与文件系统的压缩与打包</span></a></li></ol></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
       
 
       
