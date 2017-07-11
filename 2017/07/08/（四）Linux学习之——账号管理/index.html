@@ -74,7 +74,7 @@
 <link href="/css/main.css?v=5.1.0" rel="stylesheet" type="text/css" />
 
 
-  <meta name="keywords" content="冯炽，fengchi863，fengchi863.top" />
+  <meta name="keywords" content="linux," />
 
 
 
@@ -92,15 +92,17 @@
 
 
 
-<meta name="description" content="天行健，君子以自强不息。">
-<meta property="og:type" content="website">
-<meta property="og:title" content="冯炽的博客">
-<meta property="og:url" content="http://yoursite.com/page/3/index.html">
+<meta name="description" content="每个登录的用户都至少会取得两个ID，一个是用户ID(UID)，一个是用户组ID(GID) /etc/passwd的文件结构：每一行都代表一个行号，有几行就代表有几个账号在你的系统中 UID的范围，0是系统管理员，所以除了root，也可以有其他名称的系统管理员">
+<meta name="keywords" content="linux">
+<meta property="og:type" content="article">
+<meta property="og:title" content="（四）Linux学习之——账号管理">
+<meta property="og:url" content="http://yoursite.com/2017/07/08/（四）Linux学习之——账号管理/index.html">
 <meta property="og:site_name" content="冯炽的博客">
-<meta property="og:description" content="天行健，君子以自强不息。">
+<meta property="og:description" content="每个登录的用户都至少会取得两个ID，一个是用户ID(UID)，一个是用户组ID(GID) /etc/passwd的文件结构：每一行都代表一个行号，有几行就代表有几个账号在你的系统中 UID的范围，0是系统管理员，所以除了root，也可以有其他名称的系统管理员">
+<meta property="og:updated_time" content="2017-07-10T13:29:38.000Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="冯炽的博客">
-<meta name="twitter:description" content="天行健，君子以自强不息。">
+<meta name="twitter:title" content="（四）Linux学习之——账号管理">
+<meta name="twitter:description" content="每个登录的用户都至少会取得两个ID，一个是用户ID(UID)，一个是用户组ID(GID) /etc/passwd的文件结构：每一行都代表一个行号，有几行就代表有几个账号在你的系统中 UID的范围，0是系统管理员，所以除了root，也可以有其他名称的系统管理员">
 
 
 
@@ -128,13 +130,13 @@
 
 
 
-  <link rel="canonical" href="http://yoursite.com/page/3/"/>
+  <link rel="canonical" href="http://yoursite.com/2017/07/08/（四）Linux学习之——账号管理/"/>
 
 
 
 
 
-  <title>冯炽的博客</title>
+  <title> （四）Linux学习之——账号管理 | 冯炽的博客 </title>
 </head>
 
 <body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
@@ -159,9 +161,7 @@
     
   
 
-  <div class="container sidebar-position-left 
-   page-home 
- ">
+  <div class="container sidebar-position-left page-post-detail ">
     <div class="headband"></div>
 
     <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
@@ -264,9 +264,9 @@
         <div class="content-wrap">
           <div id="content" class="content">
             
-  <section id="posts" class="posts-expand">
+
+  <div id="posts" class="posts-expand">
     
-      
 
   
 
@@ -275,7 +275,7 @@
   
 
   <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2017/04/22/HTML-Head-First学习笔记/">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2017/07/08/（四）Linux学习之——账号管理/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="冯炽">
@@ -296,10 +296,7 @@
             
             
               
-                
-                <a class="post-title-link" href="/2017/04/22/HTML-Head-First学习笔记/" itemprop="url">
-                  HTML Head First学习笔记
-                </a>
+                （四）Linux学习之——账号管理
               
             
           </h1>
@@ -314,8 +311,8 @@
               
                 <span class="post-meta-item-text">发表于</span>
               
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2017-04-22T23:13:27+08:00">
-                2017-04-22
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2017-07-08T21:28:17+08:00">
+                2017-07-08
               </time>
             
 
@@ -337,8 +334,8 @@
               
               
                 <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/HTML/" itemprop="url" rel="index">
-                    <span itemprop="name">HTML</span>
+                  <a href="/categories/linux/" itemprop="url" rel="index">
+                    <span itemprop="name">linux</span>
                   </a>
                 </span>
 
@@ -371,346 +368,117 @@
       
 
       
+        <ol>
+<li>每个登录的用户都至少会取得两个ID，一个是用户ID(UID)，一个是用户组ID(GID)</li>
+<li>/etc/passwd的文件结构：每一行都代表一个行号，有几行就代表有几个账号在你的系统中</li>
+<li>UID的范围，0是系统管理员，所以除了root，也可以有其他名称的系统管理员<a id="more"></a></li>
+<li>1~499是系统账号，500~65535是可登陆账号</li>
+<li>/etc/group这个文件记录GID与组名的对应</li>
+<li>/etc/passwd第四列写的GID是所谓的每个用户的“初始用户组”，当用户登陆系统时，立刻拥有这个用户组的相关权限</li>
+<li>要知道自己所支持的用户组，直接shell下输入groups即可，注意有s，第一个显示出来的就是有效用户组</li>
+<li>使用newgrp进行有效用户组的切换</li>
+<li>加入一个用户组有两种方式，一个是通过系统管理员root利用usermod帮你加入，也可以通过用户组管理员用gpasswd帮你加入</li>
+<li>/etc/gshadow文件中，第二列是密码列，如果密码列上面是！时，表示该用户不具有用户组管理员</li>
+<li>useradd可以用来新增用户，并且默认创建用户主文件夹，且权限为700</li>
+<li>使用useradd创建用户账号以后，会更改以下三种文件夹：用户账号与密码参数有关的文件、用户组相关方面的文件、用户的主文件夹</li>
+<li>用户组的角度有两种不同的机制，分别是私有用户组机制（仅自己可以进入自己的主文件夹）和公共用户组机制（用户组的其他人可以互相分享主文件夹内的数据）</li>
+<li>userdel用于删除账号，如果该账号所属的初始用户组已经没人隶属于该用户组了，那么就删除掉该用户组</li>
+<li>要帮一般账号新建密码需要使用“passwd 账号”的格式，使用“passwd”表示修改自己的密码</li>
+<li>除了使用passwd -S之外，chage命令也可以用来更详细的显示密码参数，比如最近一次更改密码的日期、账号失效日、密码失效日期等</li>
+<li>usermod与useradd类似，也是用来微调useradd增加的用户参数</li>
+<li>不论是useradd、usermod还是userdel，都是系统管理员所能够使用的命令，一般身份用户可以使用finger命令来查阅很多用户相关的信息</li>
+<li>chfn为change finger的意思，可以修改用户的finger数据</li>
+<li>chsh为change shell的简写，可以列出目前系统上面可用的shell，或者设置修改自己的shell</li>
+<li>id这个命令可以查询某人或者自己的相关的UID/GID等的信息</li>
+<li>groupadd、groupmod、groupdel与user的功能类似</li>
+<li>新建或删除一个用户组管理员，需要使用gpasswd命令</li>
+<li>ACL是Access Control List的缩写，主要目的是提供传统的owner、group、others的read、write、execute权限之外的具体权限设置</li>
+<li>getfacl可以取得某个文件/目录的ACL设置项目，setfacl可以设置某个目录/文件的ACL规定</li>
+<li>getfacl会显示出一个mask的条目，它表示用户或组所设置的权限必须要存在于mask的权限设置范围内才会生效，即是有效权限</li>
+<li>su -可以直接将身份变为root，但是这个命令需要root密码</li>
+<li>单纯使用su切换root的身份，读取的变量设置方式为non-login shell的方式，这种方式下很多原本的变量不会被改变</li>
+<li>不是所有人都能够执行sudo，仅有/etc/sudoers内的用户才能够执行sudo这个命令</li>
+<li>/etc/sudoers是有语法的，如果设置错误会造成无法使用sudo命令的不良后果，因此我们要使用visudo去修改，并在结束离开修改界面时，系统回去检验/etc/sudoers的语法</li>
+<li>可以通过别名设置visudo，可以新建一个账户别名为ADMPW的名称，然后将这个名称处理一下即可，比如User_Alias ADMPW = pro1, pro2, pro3</li>
+<li>PAM是一套验证的机制，又可以调用给其他程序所使用，因此不论你使用什么程序，都可以使用PAM来进行验证，比如了解密码强度，就可以使用这个pam_cracklib.so模块来验证，并根据验证的回报结果来编写程序</li>
+<li>查询目前已登录在系统上面的用户，使用w或who来查询，如果想知道每个账号的最近登录的时间，使用lastlog命令查询</li>
+<li>要跟系统上面的用户交谈，可以使用write命令，write 用户账号 [用户所在终端接口],如果另一个人不想接收任何信息，直接执行这个动作mesg n即可。如果想对系统上所有的用户传送信息（广播），可以直接用wall</li>
+<li>若使用电子邮箱来联络，直接使用mail命令，mail vbird1 -s “nice to meet you”</li>
+<li>若要收信，也是直接使用mail即可</li>
+<li>pwck可以用来检查/etc/passwd这个账号配置文件内的信息，可以用来检查我的输入是否正确；pwconv这个命令可以将/etc/passwd内的账号和密码移动到/etc/shadow中</li>
+<li>Linux操作系统上面，关于账号与用户组，其实记录的是UID/GID的数字而已</li>
+</ol>
+
+      
+    </div>
+
+    <div>
+      
         
-          <p>在掌赢科技实习期间，组内有每周的头脑风暴环节。所谓的头脑风暴，就是大家每周在会议室开个小会，然后讲解说一下自己有什么好的想法，能够为团队的效率提升作出贡献。因为我们的BUG单都是提交到mantis上面，而每一个版本的迭代都是要求BUG解决率的，当BUG解决率达到80%以上时，且没有严重以及加急BUG时，才允许发布。由于我们看BUG解决率只能在服务器的一个php网页上查看，而开发团队那边拥有一个自己的进度网页，是之前他们自己设计的。我们团队也想这样来设计一个属于我们测试团队的网页</p>
-          <!--noindex-->
-          <div class="post-button text-center">
-            <a class="btn" href="/2017/04/22/HTML-Head-First学习笔记/#more" rel="contents">
-              阅读全文 &raquo;
-            </a>
-          </div>
-          <!--/noindex-->
+
+      
+    </div>
+
+    <div>
+      
         
+
       
     </div>
 
     <div>
       
-    </div>
+        
 
-    <div>
-      
-    </div>
-
-    <div>
       
     </div>
 
     <footer class="post-footer">
       
-
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </article>
-
-
-    
-      
-
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2017/04/22/Python-Head-First学习笔记/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="冯炽">
-      <meta itemprop="description" content="">
-      <meta itemprop="image" content="/images/头像.jpeg">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="冯炽的博客">
-    </span>
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-            
-            
-              
-                
-                <a class="post-title-link" href="/2017/04/22/Python-Head-First学习笔记/" itemprop="url">
-                  Python Head First学习笔记
-                </a>
-              
-            
-          </h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">发表于</span>
-              
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2017-04-22T11:33:33+08:00">
-                2017-04-22
-              </time>
-            
-
-            
-
-            
-          </span>
-
+        <div class="post-tags">
           
-            <span class="post-category" >
-            
-              <span class="post-meta-divider">|</span>
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-folder-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">分类于</span>
-              
-              
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/Python/" itemprop="url" rel="index">
-                    <span itemprop="name">Python</span>
-                  </a>
-                </span>
-
-                
-                
-              
-            </span>
+            <a href="/tags/linux/" rel="tag"># linux</a>
           
-
-          
-            
-          
-
-          
-          
-
-          
-
-          
-
-          
-
         </div>
-      </header>
-    
-
-    <div class="post-body" itemprop="articleBody">
-
-      
       
 
       
         
-          <p>Python Head First这一本书也是我在大四实习的时候阅读的。现在主要在学习Android，所以已经有一段时间不碰Python了。现在把之前的笔记拿出来分享一下。笔记做的比较简陋，甚至连序号都没有。但都是可以看懂的内容。这本书也是从Python的基础知识讲起，内容还没有达到多么深入的地步。<br></p>
-          <!--noindex-->
-          <div class="post-button text-center">
-            <a class="btn" href="/2017/04/22/Python-Head-First学习笔记/#more" rel="contents">
-              阅读全文 &raquo;
-            </a>
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/2017/07/10/（五）Linux学习之——软件管理/" rel="next" title="（五）Linux学习之——软件管理">
+                <i class="fa fa-chevron-left"></i> （五）Linux学习之——软件管理
+              </a>
+            
           </div>
-          <!--/noindex-->
-        
-      
-    </div>
 
-    <div>
-      
-    </div>
+          <span class="post-nav-divider"></span>
 
-    <div>
-      
-    </div>
-
-    <div>
-      
-    </div>
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </article>
-
-
-    
-      
-
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2017/04/21/JAVA-Head-First学习笔记/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="冯炽">
-      <meta itemprop="description" content="">
-      <meta itemprop="image" content="/images/头像.jpeg">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="冯炽的博客">
-    </span>
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
+          <div class="post-nav-prev post-nav-item">
             
+              <a href="/2017/07/05/（三）Linux学习之——Linux磁盘与文件系统管理/" rel="prev" title="（三）Linux学习之——Linux磁盘与文件系统管理">
+                （三）Linux学习之——Linux磁盘与文件系统管理 <i class="fa fa-chevron-right"></i>
+              </a>
             
-              
-                
-                <a class="post-title-link" href="/2017/04/21/JAVA-Head-First学习笔记/" itemprop="url">
-                  JAVA Head First学习笔记
-                </a>
-              
-            
-          </h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">发表于</span>
-              
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2017-04-21T20:05:33+08:00">
-                2017-04-21
-              </time>
-            
-
-            
-
-            
-          </span>
-
-          
-            <span class="post-category" >
-            
-              <span class="post-meta-divider">|</span>
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-folder-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">分类于</span>
-              
-              
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/JAVA/" itemprop="url" rel="index">
-                    <span itemprop="name">JAVA</span>
-                  </a>
-                </span>
-
-                
-                
-              
-            </span>
-          
-
-          
-            
-          
-
-          
-          
-
-          
-
-          
-
-          
-
+          </div>
         </div>
-      </header>
-    
-
-    <div class="post-body" itemprop="articleBody">
-
-      
       
 
       
-        
-          <p>这是我大四上学期在掌赢信息科技实习的时候看的一本书籍，Head First系列想必大家都听说过吧。当时因为要做Android的自动化测试，编写一个名为QT4A的自动化脚本，具体在此不详述。因为是for Android，而Android用到的语言是Java，因此我在公司订购了一本《Java Head First》，在利用晚饭的间隙，花了不到半个月的时间把这本读完了。以下是我当时边读书边写的读书笔记，笔记内容按书籍章节分层。<br></p>
-          <!--noindex-->
-          <div class="post-button text-center">
-            <a class="btn" href="/2017/04/21/JAVA-Head-First学习笔记/#more" rel="contents">
-              阅读全文 &raquo;
-            </a>
-          </div>
-          <!--/noindex-->
-        
-      
-    </div>
-
-    <div>
-      
-    </div>
-
-    <div>
-      
-    </div>
-
-    <div>
-      
-    </div>
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
       
     </footer>
   </article>
 
 
-    
-  </section>
 
-  
-  <nav class="pagination">
-    <a class="extend prev" rel="prev" href="/page/2/"><i class="fa fa-angle-left"></i></a><a class="page-number" href="/">1</a><a class="page-number" href="/page/2/">2</a><span class="page-number current">3</span>
-  </nav>
-
+    <div class="post-spread">
+      
+    </div>
+  </div>
 
 
           </div>
@@ -718,6 +486,10 @@
 
 
           
+  <div class="comments" id="comments">
+    
+  </div>
+
 
         </div>
         
@@ -956,6 +728,10 @@
 
 
   
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.1.0"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=5.1.0"></script>
+
+
 
   
 
