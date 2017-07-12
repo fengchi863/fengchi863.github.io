@@ -74,7 +74,7 @@
 <link href="/css/main.css?v=5.1.0" rel="stylesheet" type="text/css" />
 
 
-  <meta name="keywords" content="冯炽，fengchi863，fengchi863.top" />
+  <meta name="keywords" content="linux," />
 
 
 
@@ -92,16 +92,17 @@
 
 
 
-<meta name="description" content="关于我一只正在学习安卓的菜鸟，欢迎分享知识。 From fengchi863 Email：fengchi863@qq.comQQ：304571836">
-<meta property="og:type" content="website">
-<meta property="og:title" content="about">
-<meta property="og:url" content="http://yoursite.com/about/index.html">
+<meta name="description" content="实现service的程序我们叫daemon 依据daemon的启动与管理方式来区分，可以将daemon分为可独立启动的stand alone，与通过一个super daemon来统一管理的服务这两大类 stand daemon可以自行单独启动服务，因为是一直存在内存内持续的提供服务，因此对于发生客户端的请求时，stand alone的daemon响应速度较快">
+<meta name="keywords" content="linux">
+<meta property="og:type" content="article">
+<meta property="og:title" content="（七）Linux学习之——系统服务管理">
+<meta property="og:url" content="http://yoursite.com/2017/07/12/（七）Linux学习之——系统服务管理/index.html">
 <meta property="og:site_name" content="冯炽的博客">
-<meta property="og:description" content="关于我一只正在学习安卓的菜鸟，欢迎分享知识。 From fengchi863 Email：fengchi863@qq.comQQ：304571836">
-<meta property="og:updated_time" content="2017-04-21T13:16:30.000Z">
+<meta property="og:description" content="实现service的程序我们叫daemon 依据daemon的启动与管理方式来区分，可以将daemon分为可独立启动的stand alone，与通过一个super daemon来统一管理的服务这两大类 stand daemon可以自行单独启动服务，因为是一直存在内存内持续的提供服务，因此对于发生客户端的请求时，stand alone的daemon响应速度较快">
+<meta property="og:updated_time" content="2017-07-12T13:22:36.000Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="about">
-<meta name="twitter:description" content="关于我一只正在学习安卓的菜鸟，欢迎分享知识。 From fengchi863 Email：fengchi863@qq.comQQ：304571836">
+<meta name="twitter:title" content="（七）Linux学习之——系统服务管理">
+<meta name="twitter:description" content="实现service的程序我们叫daemon 依据daemon的启动与管理方式来区分，可以将daemon分为可独立启动的stand alone，与通过一个super daemon来统一管理的服务这两大类 stand daemon可以自行单独启动服务，因为是一直存在内存内持续的提供服务，因此对于发生客户端的请求时，stand alone的daemon响应速度较快">
 
 
 
@@ -129,19 +130,13 @@
 
 
 
-  <link rel="canonical" href="http://yoursite.com/about/"/>
+  <link rel="canonical" href="http://yoursite.com/2017/07/12/（七）Linux学习之——系统服务管理/"/>
 
 
 
 
 
-  <title>
-  
-
-  
-    about | 冯炽的博客
-  
-</title>
+  <title> （七）Linux学习之——系统服务管理 | 冯炽的博客 </title>
 </head>
 
 <body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
@@ -166,7 +161,7 @@
     
   
 
-  <div class="container sidebar-position-left  ">
+  <div class="container sidebar-position-left page-post-detail ">
     <div class="headband"></div>
 
     <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
@@ -271,21 +266,198 @@
             
 
   <div id="posts" class="posts-expand">
-  <header class="post-header">
+    
 
-	<h1 class="post-title" itemprop="name headline">about</h1>
+  
 
+  
+  
+  
 
+  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2017/07/12/（七）Linux学习之——系统服务管理/">
 
-</header>
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="冯炽">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/头像.jpeg">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="冯炽的博客">
+    </span>
 
     
-    
-      <h2 id="关于我"><a href="#关于我" class="headerlink" title="关于我"></a>关于我</h2><p>一只正在学习安卓的菜鸟，欢迎分享知识。</p>
-<p>From fengchi863</p>
-<p>Email：fengchi863@qq.com<br>QQ：304571836</p>
+      <header class="post-header">
 
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+            
+            
+              
+                （七）Linux学习之——系统服务管理
+              
+            
+          </h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2017-07-12T20:11:59+08:00">
+                2017-07-12
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+            <span class="post-category" >
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/linux/" itemprop="url" rel="index">
+                    <span itemprop="name">linux</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
     
+
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        <ol>
+<li>实现service的程序我们叫daemon</li>
+<li>依据daemon的启动与管理方式来区分，可以将daemon分为可独立启动的stand alone，与通过一个super daemon来统一管理的服务这两大类</li>
+<li>stand daemon可以自行单独启动服务，因为是一直存在内存内持续的提供服务，因此对于发生客户端的请求时，stand alone的daemon响应速度较快<a id="more"></a></li>
+<li>由于super daemon负责唤醒各项服务，因此super daemon可以具有安全控管的机制，就是类似网络防火墙的功能</li>
+<li>针对super daemon的处理模式有两种，分别是multi-threaded多线程与single-threaded单线程</li>
+<li>当一个服务的名称被创建时，被挂上Linux使用时，通常在服务的名称之后会加上一个d，比如例行性命令的新建at与cron这两个服务，它的程序文件名会被取为atd与crond，这个d代表的就是daemon的意思</li>
+<li>可以通过修改/etc/services来更改一个服务的端口号，但是建议一般不要去修改它</li>
+<li>daemon的启动脚本放在以下地方：/etc/init.d/*是启动脚本放置处，/etc/sysconfig/*是各服务的初始化环境配置文件，/etc/xinetd.conf，/etc/xinetd.d/*是super daemon配置文件，/etc/*是各服务各自的配置文件，/var/lib/<em>是各服务产生的数据库，/var/run/\</em>是各服务的服务的PID记录处</li>
+<li>service一个进程可以启动一个stand alone服务的脚本，service仅是一个script，它可以分析你执行的service后面的参数，然后根据你的参数再到/etc/init.d去取得正确的服务来start或stop</li>
+<li>super daemon本身也是一个stand alone的服务，但是它所管理的其他daemon就不是这样做了，必须要在配置文件中设置为启动该daemon才行，配置文件就是/etc/xinetd.d/*的所有文件</li>
+<li>在上述文件夹中的那些文件中，文件内容有一行是disable = no或yes，改成no则可以启动，注意启动后观察启动的服务仍是xinetd，因为他要控制刚才那个服务</li>
+<li>/etc/xinetd.conf是super daemon的默认服务文件，其他更多的服务参数文件在/etc/xinetd.d里面</li>
+<li>一般来说，系统的防火墙分析主要可以通过包过滤或者是通过软件分析，我们的Linux默认有提供一个软件分析的工具，那就是/etc/hosts.deny和/etc/hosts.allow这两个配置文件</li>
+<li>任何以xinetd管理的服务都可以通过/etc/hosts.allow，/etc/hosts.deny来设置防火墙，针对源IP或域进行允许或拒绝的设置，以决定该连接是否能够成功实现连接的一种方式</li>
+<li>这个套件本身的功能就是分析TCP网络数据数据包，因为TCP数据包的文件头主要记录了来源与目标主机的IP与port，因此通过分析TCP数据包并搭配/etc/hosts.{allow,deny}的规则比较，就可以决定该连接是否能够进入我们的主机</li>
+<li>通过ldd指令来测试一个程序有无支持TCP Wrappers的功能</li>
+<li>allow与deny这两个文件的判断依据是，以/etc/hosts.allow为优先，若分析到的IP或网段没有记录在/etc/hosts.allow，则以/etc/hosts.deny来判断，也就是说allow与deny这两个文件有先后关系</li>
+<li>可以使用ps与top来查找已经启动了的服务的程序与它的PID</li>
+<li>利用netstat -tulp可以找出目前系统开启的网络服务有哪些</li>
+<li>使用netstat仅能查看到目前已经启动的daemon，使用service这个命令或者是/etc/init.d/* start的方法能在目前的环境下启动某个服务</li>
+<li>要设置系统服务的默认开机启动与否，使用chkconfig，不过chkconfig仅是设置开机时默认会启动的服务而已，所以该服务目前的状态如何是不知道的</li>
+<li>总结：stand alone daemon启动的脚本放置到/etc/init.d/这个目录中，super daemon的配置文件放在/etc/xined.d/*内，而启动的方式则为/etc/init.d/xientd restart</li>
+</ol>
+
+      
+    </div>
+
+    <div>
+      
+        
+
+      
+    </div>
+
+    <div>
+      
+        
+
+      
+    </div>
+
+    <div>
+      
+        
+
+      
+    </div>
+
+    <footer class="post-footer">
+      
+        <div class="post-tags">
+          
+            <a href="/tags/linux/" rel="tag"># linux</a>
+          
+        </div>
+      
+
+      
+        
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+          </div>
+
+          <span class="post-nav-divider"></span>
+
+          <div class="post-nav-prev post-nav-item">
+            
+              <a href="/2017/07/11/（六）Linux学习之——网络管理/" rel="prev" title="（六）Linux学习之——网络管理">
+                （六）Linux学习之——网络管理 <i class="fa fa-chevron-right"></i>
+              </a>
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
+  </article>
+
+
+
+    <div class="post-spread">
+      
+    </div>
   </div>
 
 
@@ -536,6 +708,10 @@
 
 
   
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.1.0"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=5.1.0"></script>
+
+
 
   
 
